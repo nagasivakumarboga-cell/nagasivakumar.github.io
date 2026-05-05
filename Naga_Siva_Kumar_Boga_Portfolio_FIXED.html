@@ -1,0 +1,2942 @@
+<!DOCTYPE html>
+<!-- saved from url=(0107)file:///C:/Users/nagas/Desktop/Naga%20Siva%20Kumar%20Boga%20%E2%80%94%20Design%20&%20Engineering.html#catia -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Naga Siva Kumar Boga â€” Design &amp; Engineering</title>
+<link rel="preconnect" href="https://fonts.googleapis.com/">
+<link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Mono:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&family=DM+Sans:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0d0d0d;
+    --surface: #161616;
+    --surface2: #1f1f1f;
+    --border: #2a2a2a;
+    --accent: #e8c547;
+    --accent2: #ff6b35;
+    --text: #f0ede6;
+    --muted: #888;
+    --subtle: #444;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body { background: var(--bg); color: var(--text); font-family: 'DM Sans', sans-serif; font-weight: 300; line-height: 1.6; overflow-x: hidden; }
+
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 999;
+    opacity: 0.4;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.2rem 3rem;
+    backdrop-filter: blur(20px);
+    background: rgba(13,13,13,0.8);
+    border-bottom: 1px solid var(--border);
+  }
+  .nav-logo { font-family: 'Bebas Neue', sans-serif; font-size: 1.4rem; letter-spacing: 0.1em; color: var(--accent); }
+  .nav-links { display: flex; gap: 2rem; list-style: none; flex-wrap: wrap; }
+  .nav-links a { color: var(--muted); text-decoration: none; font-size: 0.78rem; letter-spacing: 0.15em; text-transform: uppercase; transition: color 0.3s; }
+  .nav-links a:hover { color: var(--accent); }
+
+  /* HERO */
+  #hero {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    padding: 8rem 3rem 4rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero-bg-text {
+    position: absolute; right: -2rem; top: 50%; transform: translateY(-50%);
+    font-family: 'Bebas Neue', sans-serif; font-size: clamp(8rem, 18vw, 22rem);
+    color: transparent; -webkit-text-stroke: 1px var(--border);
+    line-height: 0.9; user-select: none; pointer-events: none; z-index: 0;
+  }
+  .hero-content { position: relative; z-index: 1; }
+  .hero-tag {
+    display: inline-block; background: var(--accent); color: var(--bg);
+    font-family: 'DM Mono', monospace; font-size: 0.7rem; letter-spacing: 0.2em;
+    text-transform: uppercase; padding: 0.35rem 0.8rem; margin-bottom: 1.5rem;
+    animation: fadeUp 0.8s ease both;
+  }
+  h1.hero-name {
+    font-family: 'Bebas Neue', sans-serif; font-size: clamp(3.5rem, 8vw, 7rem);
+    line-height: 0.92; letter-spacing: 0.02em; margin-bottom: 1.5rem;
+    animation: fadeUp 0.8s 0.1s ease both;
+  }
+  h1.hero-name span { color: var(--accent); }
+  .hero-desc {
+    font-size: 1rem; color: var(--muted); max-width: 480px; line-height: 1.7;
+    margin-bottom: 2.5rem; animation: fadeUp 0.8s 0.2s ease both;
+  }
+  .hero-cta { display: flex; gap: 1rem; animation: fadeUp 0.8s 0.3s ease both; }
+  .btn {
+    padding: 0.8rem 2rem; font-family: 'DM Mono', monospace; font-size: 0.75rem;
+    letter-spacing: 0.15em; text-transform: uppercase; text-decoration: none;
+    border: none; cursor: pointer; transition: all 0.3s; display: inline-block;
+  }
+  .btn-primary { background: var(--accent); color: var(--bg); }
+  .btn-primary:hover { background: #fff; }
+  .btn-outline { background: transparent; color: var(--text); border: 1px solid var(--border); }
+  .btn-outline:hover { border-color: var(--accent); color: var(--accent); }
+
+  .hero-stats {
+    position: relative; z-index: 1;
+    display: grid; grid-template-rows: repeat(3, 1fr); gap: 1.5rem;
+    padding-left: 4rem; animation: fadeUp 0.8s 0.4s ease both;
+  }
+  .stat-card {
+    background: var(--surface); border: 1px solid var(--border);
+    padding: 1.5rem 2rem; position: relative; overflow: hidden; transition: border-color 0.3s;
+  }
+  .stat-card::before {
+    content: ''; position: absolute; left: 0; top: 0; bottom: 0;
+    width: 3px; background: var(--accent);
+  }
+  .stat-card:hover { border-color: var(--accent); }
+  .stat-number { font-family: 'Bebas Neue', sans-serif; font-size: 2.5rem; color: var(--accent); line-height: 1; }
+  .stat-label { font-size: 0.78rem; color: var(--muted); letter-spacing: 0.08em; text-transform: uppercase; margin-top: 0.3rem; }
+
+  /* SECTION LAYOUT */
+  section { padding: 6rem 3rem; max-width: 1200px; margin: 0 auto; }
+  .section-header { display: flex; align-items: baseline; gap: 1.5rem; margin-bottom: 3.5rem; position: relative; }
+  .section-num { font-family: 'DM Mono', monospace; font-size: 0.7rem; color: var(--accent); letter-spacing: 0.2em; }
+  h2.section-title { font-family: 'Bebas Neue', sans-serif; font-size: clamp(2.5rem, 5vw, 4rem); line-height: 1; letter-spacing: 0.02em; }
+  .section-line { flex: 1; height: 1px; background: var(--border); margin-left: auto; }
+
+  /* SKILLS */
+  #skills { background: var(--surface); max-width: 100%; padding: 6rem 3rem; }
+  #skills .inner { max-width: 1200px; margin: 0 auto; }
+  .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.5rem; }
+  .skill-group {
+    background: var(--bg); border: 1px solid var(--border); padding: 2rem;
+    transition: border-color 0.3s, transform 0.3s;
+  }
+  .skill-group:hover { border-color: var(--accent); transform: translateY(-4px); }
+  .skill-group-title {
+    font-family: 'DM Mono', monospace; font-size: 0.7rem; color: var(--accent);
+    text-transform: uppercase; letter-spacing: 0.2em; margin-bottom: 1.2rem;
+  }
+  .skill-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+  .tag {
+    background: var(--surface2); color: var(--text); font-size: 0.78rem;
+    padding: 0.3rem 0.8rem; border: 1px solid var(--border); letter-spacing: 0.05em; transition: all 0.2s;
+  }
+  .tag:hover { background: var(--accent); color: var(--bg); border-color: var(--accent); }
+
+  /* EXPERIENCE */
+  .timeline { position: relative; padding-left: 2rem; }
+  .timeline::before { content: ''; position: absolute; left: 0; top: 0.5rem; bottom: 0; width: 1px; background: var(--border); }
+  .timeline-item { position: relative; margin-bottom: 3rem; padding-left: 2rem; }
+  .timeline-item::before { content: ''; position: absolute; left: -2rem; top: 0.5rem; width: 10px; height: 10px; background: var(--accent); transform: rotate(45deg); }
+  .timeline-meta { display: flex; align-items: center; gap: 1rem; margin-bottom: 0.5rem; flex-wrap: wrap; }
+  .timeline-company { font-family: 'Bebas Neue', sans-serif; font-size: 1.4rem; letter-spacing: 0.05em; }
+  .timeline-duration { font-family: 'DM Mono', monospace; font-size: 0.7rem; color: var(--accent); background: rgba(232,197,71,0.1); padding: 0.2rem 0.7rem; border: 1px solid rgba(232,197,71,0.3); }
+  .timeline-role { font-size: 0.85rem; color: var(--muted); margin-bottom: 1rem; letter-spacing: 0.05em; }
+  .timeline-points { list-style: none; display: flex; flex-direction: column; gap: 0.6rem; }
+  .timeline-points li { font-size: 0.88rem; color: #aaa; padding-left: 1.2rem; position: relative; line-height: 1.6; }
+  .timeline-points li::before { content: 'â€”'; position: absolute; left: 0; color: var(--accent2); }
+
+  /* PROJECTS */
+  .projects-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+  .project-card {
+    background: var(--surface); border: 1px solid var(--border); padding: 2.5rem;
+    position: relative; overflow: hidden; transition: border-color 0.3s, transform 0.3s;
+  }
+  .project-card:first-child { grid-column: 1 / -1; }
+  .project-card:hover { border-color: var(--accent); transform: translateY(-4px); }
+  .project-card::after { content: ''; position: absolute; right: -40px; bottom: -40px; width: 120px; height: 120px; border: 1px solid var(--border); transform: rotate(45deg); transition: border-color 0.3s; }
+  .project-card:hover::after { border-color: var(--accent); }
+  .project-type { font-family: 'DM Mono', monospace; font-size: 0.65rem; color: var(--accent2); text-transform: uppercase; letter-spacing: 0.2em; margin-bottom: 1rem; }
+  .project-title { font-family: 'Bebas Neue', sans-serif; font-size: 1.8rem; letter-spacing: 0.03em; margin-bottom: 1rem; line-height: 1; }
+  .project-desc { font-size: 0.88rem; color: var(--muted); line-height: 1.7; margin-bottom: 1.5rem; }
+  .project-highlights { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+  .highlight-tag { font-family: 'DM Mono', monospace; font-size: 0.65rem; color: var(--accent); border: 1px solid rgba(232,197,71,0.3); padding: 0.25rem 0.6rem; letter-spacing: 0.1em; }
+
+  /* EDUCATION */
+  .edu-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
+  .edu-card { background: var(--surface); border: 1px solid var(--border); padding: 2rem; position: relative; transition: border-color 0.3s; }
+  .edu-card:hover { border-color: var(--accent); }
+  .edu-degree { font-family: 'Bebas Neue', sans-serif; font-size: 1.3rem; letter-spacing: 0.04em; margin-bottom: 0.5rem; }
+  .edu-school { font-size: 0.85rem; color: var(--muted); margin-bottom: 0.8rem; }
+  .edu-meta { display: flex; justify-content: space-between; align-items: center; margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--border); }
+  .edu-score { font-family: 'DM Mono', monospace; font-size: 1rem; color: var(--accent); }
+  .edu-year { font-size: 0.75rem; color: var(--subtle); letter-spacing: 0.05em; }
+
+  /* â”€â”€ CATIA WORKS SECTION â”€â”€ */
+  #catia { background: var(--bg); max-width: 100%; padding: 6rem 3rem; border-top: 1px solid var(--border); }
+  #catia .inner { max-width: 1200px; margin: 0 auto; }
+
+  .catia-intro { color: var(--muted); font-size: 0.95rem; max-width: 640px; line-height: 1.7; margin-bottom: 2rem; }
+
+  .catia-stats { display: flex; gap: 1.5rem; flex-wrap: wrap; margin-bottom: 2.5rem; }
+  .catia-stat { background: var(--surface); border: 1px solid var(--border); padding: 1rem 1.5rem; border-left: 3px solid var(--accent); min-width: 120px; }
+  .catia-stat-n { font-family: 'Bebas Neue', sans-serif; font-size: 2.2rem; color: var(--accent); line-height: 1; }
+  .catia-stat-l { font-size: 0.7rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.1em; margin-top: 0.2rem; }
+
+  /* Upload notice box */
+  .upload-notice {
+    background: rgba(232,197,71,0.06);
+    border: 1px solid rgba(232,197,71,0.25);
+    padding: 1.2rem 1.8rem;
+    margin-bottom: 2rem;
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+  .upload-notice-icon { font-size: 1.4rem; flex-shrink: 0; margin-top: 2px; }
+  .upload-notice p { font-size: 0.83rem; color: var(--muted); line-height: 1.6; }
+  .upload-notice strong { color: var(--accent); font-weight: 500; }
+
+  .filter-bar { display: flex; gap: 0.6rem; flex-wrap: wrap; margin-bottom: 2rem; }
+  .filter-btn {
+    background: var(--surface); color: var(--muted); border: 1px solid var(--border);
+    padding: 0.4rem 1.1rem; font-family: 'DM Mono', monospace; font-size: 0.68rem;
+    letter-spacing: 0.12em; text-transform: uppercase; cursor: pointer; transition: all 0.2s;
+  }
+  .filter-btn.active, .filter-btn:hover { background: var(--accent); color: var(--bg); border-color: var(--accent); }
+
+  .catia-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+  }
+  .catia-card {
+    background: var(--surface); border: 1px solid var(--border); overflow: hidden;
+    transition: border-color 0.3s, transform 0.3s; cursor: pointer;
+  }
+  .catia-card:hover { border-color: var(--accent); transform: translateY(-5px); }
+  .catia-card.hidden { display: none; }
+
+  /* Image area â€” shows placeholder when no image is loaded */
+  .catia-img-wrap {
+    position: relative; aspect-ratio: 16/10; overflow: hidden;
+    background: #0d0f1a;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .catia-img-wrap img {
+    width: 100%; height: 100%; object-fit: cover;
+    transition: transform 0.4s; display: none; /* hidden until src set */
+  }
+  .catia-img-wrap img.loaded { display: block; }
+  .catia-img-wrap .placeholder {
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    gap: 0.8rem; width: 100%; height: 100%; padding: 1rem;
+  }
+  .placeholder-icon {
+    width: 52px; height: 52px; border: 1px solid var(--border); border-radius: 4px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.4rem; color: var(--accent); background: rgba(232,197,71,0.06);
+  }
+  .placeholder-label { font-family: 'DM Mono', monospace; font-size: 0.62rem; color: var(--subtle); letter-spacing: 0.15em; text-transform: uppercase; text-align: center; }
+  .placeholder-upload-btn {
+    font-family: 'DM Mono', monospace; font-size: 0.62rem; letter-spacing: 0.12em;
+    text-transform: uppercase; background: transparent; border: 1px solid var(--border);
+    color: var(--muted); padding: 0.3rem 0.8rem; cursor: pointer; transition: all 0.2s;
+  }
+  .placeholder-upload-btn:hover { border-color: var(--accent); color: var(--accent); }
+  .catia-img-wrap:hover img.loaded { transform: scale(1.05); }
+
+  .cat-badge {
+    position: absolute; top: 0.6rem; right: 0.6rem;
+    background: rgba(13,13,13,0.88); color: var(--accent);
+    font-family: 'DM Mono', monospace; font-size: 0.58rem; letter-spacing: 0.15em;
+    text-transform: uppercase; padding: 0.2rem 0.55rem;
+    border: 1px solid rgba(232,197,71,0.4);
+  }
+  .catia-card-body { padding: 1.1rem 1.3rem 1.4rem; position: relative; }
+  .card-edit-btn, .card-delete-btn {
+    position: absolute; top: 0; right: 0;
+    background: transparent; border: none; color: var(--subtle); font-size: 0.7rem;
+    cursor: pointer; padding: 0.3rem 0.5rem; font-family: 'DM Mono', monospace;
+    letter-spacing: 0.1em; text-transform: uppercase; transition: color 0.2s;
+  }
+  .card-edit-btn:hover { color: var(--accent); }
+  .card-delete-btn { right: 2rem; color: #ef4444; }
+  .card-delete-btn:hover { color: #dc2626; }
+  .card-edit-overlay {
+    display: none; position: absolute; inset: 0; z-index: 10;
+    background: var(--surface); border: 1px solid var(--accent);
+    padding: 1rem; flex-direction: column; gap: 0.6rem; overflow-y: auto;
+  }
+  .card-edit-overlay.open { display: flex; }
+  .card-edit-overlay label { font-size: 0.62rem; color: var(--muted); letter-spacing: 0.1em; text-transform: uppercase; }
+  .card-edit-overlay input, .card-edit-overlay select, .card-edit-overlay textarea {
+    background: var(--bg); border: 1px solid var(--border); color: var(--text);
+    padding: 0.4rem 0.6rem; font-family: 'DM Sans', sans-serif; font-size: 0.78rem;
+    outline: none; width: 100%; transition: border-color 0.2s;
+  }
+  .card-edit-overlay input:focus, .card-edit-overlay select:focus, .card-edit-overlay textarea:focus { border-color: var(--accent); }
+  .card-edit-overlay textarea { resize: vertical; }
+  .card-edit-actions { display: flex; gap: 0.5rem; margin-top: 0.2rem; }
+
+  /* Experience modal */
+  .experience-modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.65);
+    z-index: 220;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+  }
+  .experience-modal.open { display: flex; }
+  .experience-modal .modal-card {
+    width: min(96vw, 680px);
+    max-height: 90vh;
+    overflow-y: auto;
+    background: var(--surface);
+    border: 1px solid var(--accent);
+    border-radius: 12px;
+    padding: 1rem;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+  }
+  .experience-modal .modal-title {
+    font-family: 'DM Mono', monospace; font-size: 0.78rem;
+    color: var(--accent); text-transform: uppercase; letter-spacing: 0.17em;
+    margin-bottom: 0.8rem;
+  }
+  .experience-modal .modal-body { display: grid; gap: 0.75rem; }
+  .experience-modal .modal-row label {
+    font-size: 0.68rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.08em;
+    display: block; margin-bottom: 0.25rem;
+  }
+  .experience-modal .modal-row input,
+  .experience-modal .modal-row textarea { width: 100%; background: var(--bg); border: 1px solid var(--border); color: var(--text); padding: 0.45rem 0.7rem; font-family: 'DM Sans', sans-serif; font-size: 0.8rem; outline: none; transition: border-color 0.2s; resize: vertical; }
+  .experience-modal .modal-row input:focus,
+  .experience-modal .modal-row textarea:focus { border-color: var(--accent); }
+  .experience-modal .modal-actions { display: flex; gap: 0.75rem; margin-top: 0.8rem; justify-content: flex-end; }
+
+  /* Lightbox */
+  .lb {
+    display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.94);
+    z-index: 200; align-items: center; justify-content: center; flex-direction: column; gap: 1rem;
+  }
+  .lb.open { display: flex; }
+  .lb img { max-width: 90vw; max-height: 80vh; object-fit: contain; border: 1px solid var(--border); }
+  .lb-title { font-family: 'Bebas Neue', sans-serif; font-size: 1.5rem; color: var(--accent); letter-spacing: 0.06em; }
+  .lb-close {
+    position: absolute; top: 1.5rem; right: 2rem;
+    font-family: 'DM Mono', monospace; font-size: 0.7rem; letter-spacing: 0.2em;
+    color: var(--muted); cursor: pointer; transition: color 0.2s;
+  }
+  .lb-close:hover { color: var(--accent); }
+  .lb-no-img { color: var(--muted); font-size: 0.9rem; text-align: center; padding: 2rem; }
+
+  /* CONTACT */
+  #contact { background: var(--surface); max-width: 100%; padding: 6rem 3rem; }
+  #contact .inner { max-width: 1200px; margin: 0 auto; }
+  .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; }
+  .contact-heading { font-family: 'Bebas Neue', sans-serif; font-size: clamp(2.5rem, 5vw, 5rem); line-height: 0.9; margin-bottom: 1.5rem; }
+  .contact-heading span { color: var(--accent); }
+  .contact-text { color: var(--muted); font-size: 0.9rem; line-height: 1.7; margin-bottom: 2rem; }
+  .contact-links { display: flex; flex-direction: column; gap: 1rem; }
+  .contact-link {
+    display: flex; align-items: center; gap: 1rem; text-decoration: none;
+    color: var(--text); padding: 1rem 1.5rem; background: var(--bg);
+    border: 1px solid var(--border); transition: all 0.3s;
+  }
+  .contact-link:hover { border-color: var(--accent); color: var(--accent); }
+  .contact-link-icon { font-size: 1.2rem; width: 24px; text-align: center; }
+  .contact-link-label { font-family: 'DM Mono', monospace; font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; }
+  .contact-link-value { margin-left: auto; font-size: 0.85rem; color: var(--muted); }
+  .available-badge {
+    display: inline-flex; align-items: center; gap: 0.6rem;
+    background: rgba(232,197,71,0.1); border: 1px solid rgba(232,197,71,0.3);
+    padding: 0.6rem 1.2rem; font-family: 'DM Mono', monospace;
+    font-size: 0.72rem; letter-spacing: 0.15em; color: var(--accent); text-transform: uppercase;
+  }
+  .available-dot { width: 8px; height: 8px; background: #4ade80; border-radius: 50%; animation: pulse 2s infinite; }
+
+  /* FOOTER */
+  footer { text-align: center; padding: 2rem; border-top: 1px solid var(--border); font-family: 'DM Mono', monospace; font-size: 0.7rem; color: var(--subtle); letter-spacing: 0.1em; }
+
+  /* ANIMATIONS */
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+  @keyframes pulse { 0%, 100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.5; transform: scale(1.3); } }
+  .reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.7s ease, transform 0.7s ease; }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+
+  ::-webkit-scrollbar { width: 4px; }
+  ::-webkit-scrollbar-track { background: var(--bg); }
+  ::-webkit-scrollbar-thumb { background: var(--accent); }
+
+  @media (max-width: 768px) {
+    nav { padding: 1rem 1.5rem; }
+    .nav-links { gap: 1rem; }
+    #hero { grid-template-columns: 1fr; padding: 6rem 1.5rem 3rem; }
+    .hero-stats { padding-left: 0; padding-top: 2rem; grid-template-rows: auto; grid-template-columns: 1fr 1fr 1fr; }
+    .hero-bg-text { display: none; }
+    section { padding: 4rem 1.5rem; }
+    .projects-grid { grid-template-columns: 1fr; }
+    .contact-grid { grid-template-columns: 1fr; gap: 2rem; }
+    #skills, #contact, #catia { padding: 4rem 1.5rem; }
+    .catia-grid { grid-template-columns: 1fr; }
+  }
+
+  /* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+     FEATURE 1 â€” ADD NEW CARD PANEL
+  â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
+  .add-card-panel {
+    background: rgba(232,197,71,0.04);
+    border: 1px dashed rgba(232,197,71,0.4);
+    padding: 1.8rem 2rem;
+    margin-bottom: 2rem;
+    display: none;
+  }
+  .add-card-panel.open { display: block; }
+  .add-card-panel h4 {
+    font-family: 'DM Mono', monospace; font-size: 0.72rem; color: var(--accent);
+    letter-spacing: 0.18em; text-transform: uppercase; margin-bottom: 1.2rem;
+  }
+  .add-card-form { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+  .add-card-form label { font-size: 0.7rem; color: var(--muted); letter-spacing: 0.1em; text-transform: uppercase; display: block; margin-bottom: 0.4rem; }
+  .add-card-form input, .add-card-form textarea, .add-card-form select {
+    width: 100%; background: var(--bg); border: 1px solid var(--border); color: var(--text);
+    padding: 0.6rem 0.9rem; font-family: 'DM Sans', sans-serif; font-size: 0.82rem;
+    outline: none; transition: border-color 0.2s; resize: none;
+  }
+  .add-card-form input:focus, .add-card-form textarea:focus, .add-card-form select:focus { border-color: var(--accent); }
+  .add-card-form .full { grid-column: 1 / -1; }
+  .form-actions { display: flex; gap: 0.8rem; margin-top: 1rem; }
+  .btn-sm {
+    padding: 0.55rem 1.4rem; font-family: 'DM Mono', monospace; font-size: 0.68rem;
+    letter-spacing: 0.13em; text-transform: uppercase; border: none; cursor: pointer; transition: all 0.2s;
+  }
+  .btn-sm-primary { background: var(--accent); color: var(--bg); }
+  .btn-sm-primary:hover { background: #fff; }
+  .btn-sm-ghost { background: transparent; color: var(--muted); border: 1px solid var(--border); }
+  .btn-sm-ghost:hover { border-color: var(--accent); color: var(--accent); }
+
+  /* "Add New Card" trigger button */
+  .add-card-trigger {
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    background: transparent; border: 1px solid rgba(232,197,71,0.4);
+    color: var(--accent); font-family: 'DM Mono', monospace; font-size: 0.68rem;
+    letter-spacing: 0.13em; text-transform: uppercase; padding: 0.55rem 1.2rem;
+    cursor: pointer; transition: all 0.2s; margin-bottom: 1.5rem;
+  }
+  .add-card-trigger:hover { background: rgba(232,197,71,0.08); border-color: var(--accent); }
+
+  /* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+     FEATURE 2 â€” CARD CATEGORY EDIT
+  â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
+
+  /* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+     EDIT PANELS FOR SECTIONS
+  â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
+  .section-edit-btn {
+    background: transparent; border: none; color: var(--subtle);
+    font-family: 'DM Mono', monospace; font-size: 0.6rem; letter-spacing: 0.1em;
+    text-transform: uppercase; cursor: pointer; margin-left: 0.7rem;
+    padding: 0.1rem 0.4rem; border: 1px solid transparent; transition: all 0.2s; vertical-align: middle;
+  }
+  .section-edit-btn:hover { color: var(--accent); border-color: rgba(232,197,71,0.4); }
+  .section-edit-panel {
+    display: none; position: absolute; top: calc(100% + 0.5rem); left: 0;
+    background: var(--surface); border: 1px solid var(--accent); padding: 1.2rem 1.4rem;
+    z-index: 50; min-width: 400px; box-shadow: 0 8px 32px rgba(0,0,0,0.5);
+  }
+  .section-edit-panel.open { display: block; }
+  .section-edit-panel h5 { font-family: 'DM Mono', monospace; font-size: 0.65rem; color: var(--accent); letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 1rem; }
+  .section-edit-row { margin-bottom: 0.8rem; }
+  .section-edit-row label { font-size: 0.68rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.08em; display: block; margin-bottom: 0.3rem; }
+  .section-edit-row input, .section-edit-row textarea {
+    width: 100%; background: var(--bg); border: 1px solid var(--border); color: var(--text);
+    padding: 0.45rem 0.7rem; font-family: 'DM Sans', sans-serif; font-size: 0.8rem;
+    outline: none; transition: border-color 0.2s; resize: vertical;
+  }
+  .section-edit-row input:focus, .section-edit-row textarea:focus { border-color: var(--accent); }
+
+  /* Modal overlay for add-card on mobile */
+  @media (max-width: 600px) {
+    .add-card-form { grid-template-columns: 1fr; }
+    .section-edit-panel { min-width: 240px; }
+    .avail-panel { min-width: 240px; }
+  }
+
+  /* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+     FEATURE 3 â€” CONTACT AVAILABILITY EDIT
+  â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
+  .availability-edit-area { position: relative; display: inline-block; margin-bottom: 0; }
+  .avail-edit-btn {
+    background: transparent; border: none; color: var(--subtle);
+    font-family: 'DM Mono', monospace; font-size: 0.6rem; letter-spacing: 0.1em;
+    text-transform: uppercase; cursor: pointer; margin-left: 0.7rem;
+    padding: 0.1rem 0.4rem; border: 1px solid transparent; transition: all 0.2s; vertical-align: middle;
+  }
+  .avail-edit-btn:hover { color: var(--accent); border-color: rgba(232,197,71,0.4); }
+  .avail-panel {
+    display: none; position: absolute; top: calc(100% + 0.5rem); left: 0;
+    background: var(--surface); border: 1px solid var(--accent); padding: 1.2rem 1.4rem;
+    z-index: 50; min-width: 300px; box-shadow: 0 8px 32px rgba(0,0,0,0.5);
+  }
+  .avail-panel.open { display: block; }
+  .avail-panel h5 { font-family: 'DM Mono', monospace; font-size: 0.65rem; color: var(--accent); letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 1rem; }
+  .avail-row { margin-bottom: 0.8rem; }
+  .avail-row label { font-size: 0.68rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.08em; display: block; margin-bottom: 0.3rem; }
+  .avail-row input, .avail-row select {
+    width: 100%; background: var(--bg); border: 1px solid var(--border); color: var(--text);
+    padding: 0.45rem 0.7rem; font-family: 'DM Sans', sans-serif; font-size: 0.8rem;
+    outline: none; transition: border-color 0.2s;
+  }
+  .avail-row input:focus, .avail-row select:focus { border-color: var(--accent); }
+  .status-options { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+  .status-opt {
+    padding: 0.3rem 0.8rem; font-family: 'DM Mono', monospace; font-size: 0.62rem;
+    letter-spacing: 0.1em; text-transform: uppercase; border: 1px solid var(--border);
+    background: transparent; color: var(--muted); cursor: pointer; transition: all 0.2s;
+  }
+  .status-opt.selected, .status-opt:hover { background: var(--accent); color: var(--bg); border-color: var(--accent); }
+
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">NSK.BOGA</div>
+  <ul class="nav-links">
+    <li><a href="file:///C:/Users/nagas/Desktop/Naga%20Siva%20Kumar%20Boga%20%E2%80%94%20Design%20&amp;%20Engineering.html#skills">Skills</a></li>
+    <li><a href="file:///C:/Users/nagas/Desktop/Naga%20Siva%20Kumar%20Boga%20%E2%80%94%20Design%20&amp;%20Engineering.html#experience">Experience</a></li>
+    <li><a href="file:///C:/Users/nagas/Desktop/Naga%20Siva%20Kumar%20Boga%20%E2%80%94%20Design%20&amp;%20Engineering.html#projects">Projects</a></li>
+    <li><a href="file:///C:/Users/nagas/Desktop/Naga%20Siva%20Kumar%20Boga%20%E2%80%94%20Design%20&amp;%20Engineering.html#catia">CAD Works</a></li>
+    <li><a href="file:///C:/Users/nagas/Desktop/Naga%20Siva%20Kumar%20Boga%20%E2%80%94%20Design%20&amp;%20Engineering.html#about">Education</a></li>
+    <li><a href="file:///C:/Users/nagas/Desktop/Naga%20Siva%20Kumar%20Boga%20%E2%80%94%20Design%20&amp;%20Engineering.html#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<div id="hero">
+  <div class="hero-bg-text">BOGA</div>
+  <div class="hero-content">
+    <div class="hero-tag">Mechanical Engineer Â· Fresher Â· Open to Work</div>
+    <h1 class="hero-name">Naga Siva<br><span>Kumar</span><br>Boga</h1>
+    <p class="hero-desc">
+      Mechanical Engineering graduate with hands-on proficiency in AutoCAD, CATIA V5 &amp; SolidWorks.
+      Taking designs from concept through prototype â€” with a foundation in manufacturing, procurement, and operations.
+    </p>
+    <div class="hero-cta">
+      <a href="file:///C:/Users/nagas/Desktop/Naga%20Siva%20Kumar%20Boga%20%E2%80%94%20Design%20&amp;%20Engineering.html#contact" class="btn btn-primary">Get in Touch</a>
+      <a href="file:///C:/Users/nagas/Desktop/Naga%20Siva%20Kumar%20Boga%20%E2%80%94%20Design%20&amp;%20Engineering.html#catia" class="btn btn-outline">View CAD Works</a>
+    </div>
+  </div>
+  <div class="hero-stats">
+    <div class="stat-card">
+      <div class="stat-number">8.2</div>
+      <div class="stat-label">B.Tech CGPA</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-number">3+</div>
+      <div class="stat-label">Industry Internships</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-number">CAD</div>
+      <div class="stat-label">AutoCAD Â· CATIA Â· SolidWorks</div>
+    </div>
+  </div>
+</div>
+
+<!-- SKILLS -->
+<div id="skills">
+  <div class="inner">
+    <div class="section-header reveal visible">
+      <span class="section-num">01 /</span>
+      <h2 class="section-title">Technical Skills</h2>
+      <button class="section-edit-btn" onclick="toggleSectionEdit(&#39;skills&#39;)" title="Edit section">âœ Edit</button>
+      <div class="section-edit-panel" id="skillsEditPanel">
+        <h5>âœ Edit Skills Section</h5>
+        <div class="section-edit-row">
+          <label>Section Title</label>
+          <input type="text" id="skillsTitle" value="Technical Skills">
+        </div>
+        <div class="section-edit-row">
+          <label>CAD Skills (comma-separated)</label>
+          <input type="text" id="cadSkills" value="AutoCAD, CATIA V5, SolidWorks, 2D Drafting, 3D Modelling, Assembly Design">
+        </div>
+        <div class="section-edit-row">
+          <label>Design Skills (comma-separated)</label>
+          <input type="text" id="designSkills" value="Engineering Drawing, GD&amp;T Basics, Tolerance Analysis, Design for Manufacture, Product Development">
+        </div>
+        <div class="section-edit-row">
+          <label>Engineering Skills (comma-separated)</label>
+          <input type="text" id="engSkills" value="Material Selection, Bill of Materials, Component Specification, Prototype Testing">
+        </div>
+        <div class="section-edit-row">
+          <label>Operations Skills (comma-separated)</label>
+          <input type="text" id="opsSkills" value="ERP Software, MS Excel, MS Office Suite, Technical Documentation, Vendor Coordination">
+        </div>
+        <div class="form-actions" style="margin-top:0.6rem">
+          <button class="btn-sm btn-sm-primary" onclick="saveSectionEdit(&#39;skills&#39;)">Save</button>
+          <button class="btn-sm btn-sm-ghost" onclick="toggleSectionEdit(&#39;skills&#39;)">Cancel</button>
+        </div>
+      </div>
+      <div class="section-line"></div>
+    </div>
+    <div class="skills-grid">
+      <div class="skill-group reveal visible">
+        <div class="skill-group-title">CAD Software</div>
+        <div class="skill-tags">
+          <span class="tag">AutoCAD</span>
+          <span class="tag">CATIA V5</span>
+          <span class="tag">SolidWorks</span>
+          <span class="tag">2D Drafting</span>
+          <span class="tag">3D Modelling</span>
+          <span class="tag">Assembly Design</span>
+        </div>
+      </div>
+      <div class="skill-group reveal visible">
+        <div class="skill-group-title">Design Skills</div>
+        <div class="skill-tags">
+          <span class="tag">Engineering Drawing</span>
+          <span class="tag">GD&amp;T Basics</span>
+          <span class="tag">Tolerance Analysis</span>
+          <span class="tag">Design for Manufacture</span>
+          <span class="tag">Product Development</span>
+        </div>
+      </div>
+      <div class="skill-group reveal visible">
+        <div class="skill-group-title">Engineering</div>
+        <div class="skill-tags">
+          <span class="tag">Material Selection</span>
+          <span class="tag">Bill of Materials</span>
+          <span class="tag">Component Specification</span>
+          <span class="tag">Prototype Testing</span>
+        </div>
+      </div>
+      <div class="skill-group reveal visible">
+        <div class="skill-group-title">Operations &amp; Tools</div>
+        <div class="skill-tags">
+          <span class="tag">ERP Software</span>
+          <span class="tag">MS Excel</span>
+          <span class="tag">MS Office Suite</span>
+          <span class="tag">Technical Documentation</span>
+          <span class="tag">Vendor Coordination</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="section-header reveal visible">
+    <span class="section-num">02 /</span>
+    <h2 class="section-title">Experience</h2>
+    <button class="section-edit-btn" onclick="toggleSectionEdit(&#39;experience&#39;)" title="Edit section">âœ Edit</button>
+    <div class="section-line"></div>
+  </div>
+
+  <div class="experience-modal" id="experienceModal" onclick="if (event.target === this) toggleExperienceModal()">
+    <div class="modal-card">
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.8rem;">
+        <div class="modal-title">âœ Edit Experience</div>
+        <button class="btn-sm btn-sm-ghost" onclick="toggleExperienceModal()">CLOSE</button>
+      </div>
+      <div class="modal-body">
+        <div class="modal-row">
+          <label>Section Title</label>
+          <input type="text" id="expTitle" value="Experience">
+        </div>
+        <!-- Exp item 1 -->
+        <div class="modal-row">
+          <label>Company 1</label>
+          <input type="text" id="exp1Company" value="S2 Engineering Pvt. Ltd.">
+        </div>
+        <div class="modal-row">
+          <label>Role 1</label>
+          <input type="text" id="exp1Role" value="Purchase Department Trainee Â· India">
+        </div>
+        <div class="modal-row">
+          <label>Duration 1</label>
+          <input type="text" id="exp1Duration" value="10 Months">
+        </div>
+        <div class="modal-row">
+          <label>Points 1 (one per line)</label>
+          <textarea id="exp1Points" rows="5">Managed end-to-end procurement of raw materials for pharmaceutical equipment manufacturing.
+Raised and processed purchase orders in ERP; tracked order status from placement to goods receipt.
+Maintained accurate inventory data using ERP and MS Excel across the procurement cycle.
+Conducted incoming quality checks verifying material specs against engineering drawings.
+Coordinated with suppliers on quotations, delivery timelines, and technical specifications.</textarea>
+        </div>
+        <!-- Exp item 2 -->
+        <div class="modal-row">
+          <label>Company 2</label>
+          <input type="text" id="exp2Company" value="Motherson Automotive Technologies">
+        </div>
+        <div class="modal-row">
+          <label>Role 2</label>
+          <input type="text" id="exp2Role" value="Technical Operations Intern Â· Chennai">
+        </div>
+        <div class="modal-row">
+          <label>Duration 2</label>
+          <input type="text" id="exp2Duration" value="2 Months Â· 2025">
+        </div>
+        <div class="modal-row">
+          <label>Points 2 (one per line)</label>
+          <textarea id="exp2Points" rows="5">Studied engineering drawings and component specifications on the automotive production floor.
+Observed assembly sequences, jig setups, and fixture designs â€” gaining insight into design for manufacturability.
+Engaged with design engineers on tolerance requirements, material grades, and surface finish specifications.
+Documented non-conformances and developed systematic analytical thinking in a fast-paced environment.</textarea>
+        </div>
+        <!-- Exp item 3 -->
+        <div class="modal-row">
+          <label>Company 3</label>
+          <input type="text" id="exp3Company" value="Satya Surya Steels">
+        </div>
+        <div class="modal-row">
+          <label>Role 3</label>
+          <input type="text" id="exp3Role" value="Plant Operations Intern Â· Tenali">
+        </div>
+        <div class="modal-row">
+          <label>Duration 3</label>
+          <input type="text" id="exp3Duration" value="6 Months Â· 2022">
+        </div>
+        <div class="modal-row">
+          <label>Points 3 (one per line)</label>
+          <textarea id="exp3Points" rows="5">Developed understanding of material properties, forming processes, and structural behaviour in steel manufacturing.
+Observed how design specs translate into operations â€” reinforcing design-for-manufacturability principles.
+Assisted in reviewing process parameters and identifying improvement areas.</textarea>
+        </div>
+      </div>
+      <div class="modal-actions">
+        <button class="btn-sm btn-sm-primary" onclick="saveSectionEdit(&#39;experience&#39;)">Save</button>
+        <button class="btn-sm btn-sm-ghost" onclick="toggleExperienceModal()">Cancel</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="timeline">
+    <div class="timeline-item reveal visible">
+      <div class="timeline-meta">
+        <div class="timeline-company">S2 Engineering Pvt. Ltd.</div>
+        <span class="timeline-duration">11 Months (2025 May- Present)</span>
+      </div>
+      <div class="timeline-role">Purchase Department Trainee Â· India</div>
+      <ul class="timeline-points"><li>Managed end-to-end procurement of raw materials for pharmaceutical equipment manufacturing.</li><li>Raised and processed purchase orders in ERP; tracked order status from placement to goods receipt.</li><li>Maintained accurate inventory data using ERP and MS Excel across the procurement cycle.</li><li>Conducted incoming quality checks verifying material specs against engineering drawings.</li><li>Coordinated with suppliers on quotations, delivery timelines, and technical specifications.</li></ul>
+    </div>
+    <div class="timeline-item reveal visible">
+      <div class="timeline-meta">
+        <div class="timeline-company">Motherson Automotive Technologies</div>
+        <span class="timeline-duration">2 Months Â· 2025</span>
+      </div>
+      <div class="timeline-role">Technical Operations Intern Â· Chennai</div>
+      <ul class="timeline-points"><li>Studied engineering drawings and component specifications on the automotive production floor.</li><li>Observed assembly sequences, jig setups, and fixture designs â€” gaining insight into design for manufacturability.</li><li>Engaged with design engineers on tolerance requirements, material grades, and surface finish specifications.</li><li>Documented non-conformances and developed systematic analytical thinking in a fast-paced environment.</li></ul>
+    </div>
+    <div class="timeline-item reveal visible">
+      <div class="timeline-meta">
+        <div class="timeline-company">Satya Surya Steels</div>
+        <span class="timeline-duration">6 Months Â· 2022</span>
+      </div>
+      <div class="timeline-role">Plant Operations Intern Â· Tenali</div>
+      <ul class="timeline-points"><li>Developed understanding of material properties, forming processes, and structural behaviour in steel manufacturing.</li><li>Observed how design specs translate into operations â€” reinforcing design-for-manufacturability principles.</li><li>Assisted in reviewing process parameters and identifying improvement areas.</li></ul>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="section-header reveal visible">
+    <span class="section-num">03 /</span>
+    <h2 class="section-title">Projects</h2>
+    <div class="section-line"></div>
+  </div>
+  <div class="projects-grid">
+    <div class="project-card reveal visible">
+      <div class="project-type">Major Project Â· Completed</div>
+      <div class="project-title">Smart Aeration System</div>
+      <p class="project-desc">
+        Designed and built a fully automated system to monitor water quality in shrimp ponds. Managed the complete design lifecycle â€” from concept sketches to detailed CAD modelling, component selection, prototype assembly, and iterative performance testing. Delivered a full technical design report with engineering drawings, BOM, and test results.
+      </p>
+      <div class="project-highlights">
+        <span class="highlight-tag">CAD Modelling</span>
+        <span class="highlight-tag">Engineering Drawings</span>
+        <span class="highlight-tag">BOM</span>
+        <span class="highlight-tag">Prototype Testing</span>
+        <span class="highlight-tag">Material Selection</span>
+        <span class="highlight-tag">Multi-disciplinary Design</span>
+      </div>
+    </div>
+    <div class="project-card reveal visible">
+      <div class="project-type">Community Project Â· Completed</div>
+      <div class="project-title">Plastic Waste Management</div>
+      <p class="project-desc">
+        Designed and coordinated a village-level plastic waste collection initiative. Evaluated existing equipment and proposed design improvements focused on efficiency. Led a team end-to-end and presented findings to community leaders with structured MS Office reports.
+      </p>
+      <div class="project-highlights">
+        <span class="highlight-tag">Process Design</span>
+        <span class="highlight-tag">Team Leadership</span>
+        <span class="highlight-tag">Technical Reporting</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+     CATIA V5 WORKS SECTION
+â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
+<div id="catia">
+  <div class="inner">
+    <div class="section-header reveal visible">
+      <span class="section-num">04 /</span>
+      <h2 class="section-title">CAD <span style="color:var(--accent)">Files</span> </h2>
+      <div class="section-line"></div>
+    </div>
+
+    <p class="catia-intro reveal visible">
+      A showcase of 3D parts, assemblies and surfacing work modelled in CATIA V5 â€” covering Part Design, Assembly Design, Generative Shape Design, and Drafting workbenches.
+    </p>
+
+    <div class="catia-stats reveal visible">
+      <div class="catia-stat"><div class="catia-stat-n" id="partsCount">42</div><div class="catia-stat-l">Parts Modelled (visible)</div></div>
+      <div class="catia-stat"><div class="catia-stat-n">5</div><div class="catia-stat-l">Workbenches</div></div>
+      <div class="catia-stat"><div class="catia-stat-n">Catia V5</div><div class="catia-stat-l">Software  </div></div>
+      <div class="catia-stat"><div class="catia-stat-n" id="totalFiles">42</div><div class="catia-stat-l">Total Files</div></div>
+    </div>
+
+    <!-- â˜… HOW TO ADD YOUR IMAGES â˜… -->
+    <div class="upload-notice reveal visible">
+      <div class="upload-notice-icon">📂</div>
+      <p>
+        <strong>To add your screenshots:</strong> Click the <strong>"Add Image"</strong> button on any card below and select the matching screenshot from your computer, or paste a GitHub/raw image URL when prompted. Images can be loaded from local files or direct image URLs. You can also <strong>drag &amp; drop</strong> an image directly onto a card. Once you add images, <strong>save the HTML file</strong> to keep them (note: local blob URLs reset on page reload — for permanent storage see the guide below).
+      </p>
+    </div>
+    <!-- â˜… FEATURE 1 â€” ADD NEW CATIA CARD â˜… -->
+    <button class="add-card-trigger" onclick="toggleAddPanel()">
+      + &nbsp;Add New CATIA File / Screenshot
+    </button>
+
+    <div class="add-card-panel" id="addCardPanel">
+      <h4>📂 Add New CATIA Work</h4>
+      <div class="add-card-form">
+        <div>
+          <label>Card Title *</label>
+          <input type="text" id="newTitle" placeholder="e.g. Helical Gear">
+        </div>
+        <div>
+          <label>Workbench / Category *</label>
+          <select id="newCat">
+            <option value="Part Design">Part Design</option>
+            <option value="Assembly Design">Assembly Design</option>
+            <option value="Surface Design">Surface Design</option>
+            <option value="Drafting">Drafting</option>
+            <option value="Sheet Metal">Sheet Metal</option>
+            <option value="Kinematics">Kinematics</option>
+            <option value="FEM Analysis">FEM Analysis</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+        <div class="full">
+          <label>Description</label>
+          <textarea id="newDesc" rows="2" placeholder="Brief description of the model, techniques used, workbench features..."></textarea>
+        </div>
+        <div class="full">
+          <label>Upload Screenshot (optional â€” you can also add it after)</label>
+          <input type="file" id="newImgInput" accept="image/*">
+        </div>
+        <div class="full">
+          <label>Image URL (GitHub/raw link or direct image URL)</label>
+          <input type="url" id="newImgUrl" placeholder="https://raw.githubusercontent.com/user/repo/branch/path/image.png">
+        </div>
+      </div>
+      <div class="form-actions">
+        <button class="btn-sm btn-sm-primary" onclick="addNewCard()">Add to Portfolio</button>
+        <button class="btn-sm btn-sm-ghost" onclick="toggleAddPanel()">Cancel</button>
+      </div>
+    </div>
+
+    <!-- â˜… FEATURE 2 â€” FILTER / WORKBENCH BUTTONS â˜… -->
+    <div class="filter-bar reveal visible">
+      <button class="filter-btn active" data-f="all">All</button>
+      <button class="filter-btn" data-f="Part Design">Part Design</button>
+      <button class="filter-btn" data-f="Assembly Design">Assembly Design</button>
+      <button class="filter-btn" data-f="Surface Design">Surface Design</button>
+      <button class="filter-btn" data-f="Drafting">Drafting</button>
+      <button class="filter-btn" data-f="Sheet Metal">Sheet Metal</button>
+      <button class="filter-btn" data-f="Kinematics">Kinematics</button>
+      <button class="filter-btn" data-f="FEM Analysis">FEM Analysis</button>
+      <button class="filter-btn" data-f="Other">Other</button>
+    </div>
+
+    <div class="catia-grid" id="catiaGrid">
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+
+    <div class="catia-card reveal visible" data-cat="Part Design" data-id="101" style="">
+      <div class="catia-img-wrap">
+        <img alt="Mechanical Support Bracket Design" src="./Naga_Siva_Kumar_Boga_Portfolio_FIXED_files/5-Cylinder Radial Engine.png" class="loaded">
+        <div class="placeholder" style="display: none;">
+          <div class="placeholder-icon">âš™</div>
+          <div class="placeholder-label">Mechanical Support Bracket Design</div>
+          <button class="placeholder-upload-btn" onclick="triggerUpload(this)">Add Image</button>
+        </div>
+        <span class="cat-badge">Part Design</span>
+      </div>
+      <div class="catia-card-body">
+        <button class="card-edit-btn" onclick="openCardEdit(this)" title="Edit title/category">✎ Edit</button>
+        <button class="card-delete-btn" onclick="deleteCard(this)" title="Delete card">✖ Delete</button>
+        <div class="card-edit-overlay">
+          <label>Title</label><input type="text" class="edit-title-input">
+          <label>Workbench</label>
+          <select class="edit-cat-select">
+            <option>Part Design</option><option>Assembly Design</option>
+            <option>Surface Design</option><option>Drafting</option>
+            <option>Sheet Metal</option><option>Kinematics</option>
+            <option>FEM Analysis</option><option>Other</option>
+          </select>
+          <label>Description</label><textarea class="edit-desc-input" rows="3"></textarea>
+          <label>Add Image via URL</label><input type="url" class="edit-img-url-input" placeholder="https://raw.githubusercontent.com/...">
+          <div class="card-edit-actions">
+            <button class="btn-sm btn-sm-primary" onclick="saveCardEdit(this)">Save</button>
+            <button class="btn-sm btn-sm-ghost" onclick="cancelCardEdit(this)">Cancel</button>
+            <button class="btn-sm btn-sm-ghost" onclick="loadImageFromUrl(this)" style="color: var(--accent);">Load Image URL</button>
+            <button class="btn-sm btn-sm-ghost" onclick="deleteImage(this)" style="color: #ef4444;">Delete Image</button>
+            <button class="btn-sm btn-sm-ghost" onclick="deleteCard(this)" style="color: #ef4444;">Delete</button>
+          </div>
+        </div>
+        <div class="catia-card-title">Mechanical Support Bracket Design</div>
+        <p class="catia-card-desc">mechanical support component designed for industrial applications. Using a multi-view orthographic approach, the model ensures precise geometry for manufacturing and structural integrity.</p>
+      </div></div><div class="catia-card reveal visible" data-cat="Part Design" data-id="103" style="">
+      <div class="catia-img-wrap">
+        <img alt="L-Bracket" src="./Naga_Siva_Kumar_Boga_Portfolio_FIXED_files/Naga Siva Kumar Boga — Design &amp; Engineering(1) - Copy.html" class="loaded">
+        <div class="placeholder" style="display: none;">
+          <div class="placeholder-icon">âš™</div>
+          <div class="placeholder-label">L-Bracket</div>
+          <button class="placeholder-upload-btn" onclick="triggerUpload(this)">Add Image</button>
+        </div>
+        <span class="cat-badge">Part Design</span>
+      </div>
+      <div class="catia-card-body">
+        <button class="card-edit-btn" onclick="openCardEdit(this)" title="Edit title/category">âœ Edit</button>
+        <button class="card-delete-btn" onclick="deleteCard(this)" title="Delete card">ðŸ—‘ Delete</button>
+        <div class="card-edit-overlay">
+          <label>Title</label><input type="text" class="edit-title-input">
+          <label>Workbench</label>
+          <select class="edit-cat-select">
+            <option>Part Design</option><option>Assembly Design</option>
+            <option>Surface Design</option><option>Drafting</option>
+            <option>Sheet Metal</option><option>Kinematics</option>
+            <option>FEM Analysis</option><option>Other</option>
+          </select>
+          <label>Description</label><textarea class="edit-desc-input" rows="3"></textarea><label>Add Image via URL</label><input type="url" class="edit-img-url-input" placeholder="https://raw.githubusercontent.com/...">
+          <div class="card-edit-actions">
+            <button class="btn-sm btn-sm-primary" onclick="saveCardEdit(this)">Save</button>
+            <button class="btn-sm btn-sm-ghost" onclick="cancelCardEdit(this)">Cancel</button><button class="btn-sm btn-sm-ghost" style="color: var(--accent);">Load Image URL</button><button class="btn-sm btn-sm-ghost" onclick="deleteImage(this)" style="color: #ef4444;">Delete Image</button><button class="btn-sm btn-sm-ghost" onclick="deleteCard(this)" style="color: #ef4444;">Delete</button>
+          </div>
+        </div>
+        <div class="catia-card-title">L-Bracket</div>
+        <p class="catia-card-desc">structural component</p>
+      </div></div><div class="catia-card reveal visible" data-cat="Part Design" data-id="104">
+      <div class="catia-img-wrap">
+        <img alt="Valve Lifter" src="./Naga_Siva_Kumar_Boga_Portfolio_FIXED_files/Naga Siva Kumar Boga — Design &amp; Engineering(1) - Copy.html" class="loaded">
+        <div class="placeholder" style="display: none;">
+          <div class="placeholder-icon">âš™</div>
+          <div class="placeholder-label">Valve Lifter</div>
+          <button class="placeholder-upload-btn" onclick="triggerUpload(this)">Add Image</button>
+        </div>
+        <span class="cat-badge">Part Design</span>
+      </div>
+      <div class="catia-card-body">
+        <button class="card-edit-btn" onclick="openCardEdit(this)" title="Edit title/category">âœ Edit</button>
+        <button class="card-delete-btn" onclick="deleteCard(this)" title="Delete card">ðŸ—‘ Delete</button>
+        <div class="card-edit-overlay">
+          <label>Title</label><input type="text" class="edit-title-input">
+          <label>Workbench</label>
+          <select class="edit-cat-select">
+            <option>Part Design</option><option>Assembly Design</option>
+            <option>Surface Design</option><option>Drafting</option>
+            <option>Sheet Metal</option><option>Kinematics</option>
+            <option>FEM Analysis</option><option>Other</option>
+          </select>
+          <label>Description</label><textarea class="edit-desc-input" rows="3"></textarea><label>Add Image via URL</label><input type="url" class="edit-img-url-input" placeholder="https://raw.githubusercontent.com/...">
+          <div class="card-edit-actions">
+            <button class="btn-sm btn-sm-primary" onclick="saveCardEdit(this)">Save</button>
+            <button class="btn-sm btn-sm-ghost" onclick="cancelCardEdit(this)">Cancel</button><button class="btn-sm btn-sm-ghost" style="color: var(--accent);">Load Image URL</button><button class="btn-sm btn-sm-ghost" onclick="deleteImage(this)" style="color: #ef4444;">Delete Image</button><button class="btn-sm btn-sm-ghost" onclick="deleteCard(this)" style="color: #ef4444;">Delete</button>
+          </div>
+        </div>
+        <div class="catia-card-title">Valve Lifter</div>
+        <p class="catia-card-desc">A critical engine component used to transfer motion from the camshaft to the valves.</p>
+      </div></div><div class="catia-card reveal visible" data-cat="Part Design" data-id="105">
+      <div class="catia-img-wrap">
+        <img alt="Flange With Hub" src="./Naga_Siva_Kumar_Boga_Portfolio_FIXED_files/Naga Siva Kumar Boga — Design &amp; Engineering(1) - Copy.html" class="loaded">
+        <div class="placeholder" style="display: none;">
+          <div class="placeholder-icon">âš™</div>
+          <div class="placeholder-label">Flange With Hub</div>
+          <button class="placeholder-upload-btn" onclick="triggerUpload(this)">Add Image</button>
+        </div>
+        <span class="cat-badge">Part Design</span>
+      </div>
+      <div class="catia-card-body">
+        <button class="card-edit-btn" onclick="openCardEdit(this)" title="Edit title/category">âœ Edit</button>
+        <button class="card-delete-btn" onclick="deleteCard(this)" title="Delete card">ðŸ—‘ Delete</button>
+        <div class="card-edit-overlay">
+          <label>Title</label><input type="text" class="edit-title-input">
+          <label>Workbench</label>
+          <select class="edit-cat-select">
+            <option>Part Design</option><option>Assembly Design</option>
+            <option>Surface Design</option><option>Drafting</option>
+            <option>Sheet Metal</option><option>Kinematics</option>
+            <option>FEM Analysis</option><option>Other</option>
+          </select>
+          <label>Description</label><textarea class="edit-desc-input" rows="3"></textarea><label>Add Image via URL</label><input type="url" class="edit-img-url-input" placeholder="https://raw.githubusercontent.com/...">
+          <div class="card-edit-actions">
+            <button class="btn-sm btn-sm-primary" onclick="saveCardEdit(this)">Save</button>
+            <button class="btn-sm btn-sm-ghost" onclick="cancelCardEdit(this)">Cancel</button><button class="btn-sm btn-sm-ghost" style="color: var(--accent);">Load Image URL</button><button class="btn-sm btn-sm-ghost" onclick="deleteImage(this)" style="color: #ef4444;">Delete Image</button><button class="btn-sm btn-sm-ghost" onclick="deleteCard(this)" style="color: #ef4444;">Delete</button>
+          </div>
+        </div>
+        <div class="catia-card-title">Flange With Hub</div>
+        <p class="catia-card-desc">Fundamental mechanical components used to connect pipes, valves, or shafts.</p>
+      </div></div><div class="catia-card reveal visible" data-cat="Part Design" data-id="106">
+      <div class="catia-img-wrap">
+        <img alt="Hopper Flange" src="./Naga_Siva_Kumar_Boga_Portfolio_FIXED_files/Naga Siva Kumar Boga — Design &amp; Engineering(1) - Copy.html" class="loaded">
+        <div class="placeholder" style="display: none;">
+          <div class="placeholder-icon">âš™</div>
+          <div class="placeholder-label">Hopper Flange</div>
+          <button class="placeholder-upload-btn" onclick="triggerUpload(this)">Add Image</button>
+        </div>
+        <span class="cat-badge">Part Design</span>
+      </div>
+      <div class="catia-card-body">
+        <button class="card-edit-btn" onclick="openCardEdit(this)" title="Edit title/category">âœ Edit</button>
+        <button class="card-delete-btn" onclick="deleteCard(this)" title="Delete card">ðŸ—‘ Delete</button>
+        <div class="card-edit-overlay">
+          <label>Title</label><input type="text" class="edit-title-input">
+          <label>Workbench</label>
+          <select class="edit-cat-select">
+            <option>Part Design</option><option>Assembly Design</option>
+            <option>Surface Design</option><option>Drafting</option>
+            <option>Sheet Metal</option><option>Kinematics</option>
+            <option>FEM Analysis</option><option>Other</option>
+          </select>
+          <label>Description</label><textarea class="edit-desc-input" rows="3"></textarea><label>Add Image via URL</label><input type="url" class="edit-img-url-input" placeholder="https://raw.githubusercontent.com/...">
+          <div class="card-edit-actions">
+            <button class="btn-sm btn-sm-primary" onclick="saveCardEdit(this)">Save</button>
+            <button class="btn-sm btn-sm-ghost" onclick="cancelCardEdit(this)">Cancel</button><button class="btn-sm btn-sm-ghost" style="color: var(--accent);">Load Image URL</button><button class="btn-sm btn-sm-ghost" onclick="deleteImage(this)" style="color: #ef4444;">Delete Image</button><button class="btn-sm btn-sm-ghost" onclick="deleteCard(this)" style="color: #ef4444;">Delete</button>
+          </div>
+        </div>
+        <div class="catia-card-title">Hopper Flange</div>
+        <p class="catia-card-desc">A common mechanical component used as a connecting interface in material handling systems.</p>
+      </div></div><div class="catia-card reveal visible" data-cat="Part Design" data-id="107">
+      <div class="catia-img-wrap">
+        <img alt="Clamp-On Front Sight Holder" src="./Naga_Siva_Kumar_Boga_Portfolio_FIXED_files/Naga Siva Kumar Boga — Design &amp; Engineering(1) - Copy.html" class="loaded">
+        <div class="placeholder" style="display: none;">
+          <div class="placeholder-icon">âš™</div>
+          <div class="placeholder-label">Clamp-On Front Sight Holder</div>
+          <button class="placeholder-upload-btn" onclick="triggerUpload(this)">Add Image</button>
+        </div>
+        <span class="cat-badge">Part Design</span>
+      </div>
+      <div class="catia-card-body">
+        <button class="card-edit-btn" onclick="openCardEdit(this)" title="Edit title/category">âœ Edit</button>
+        <button class="card-delete-btn" onclick="deleteCard(this)" title="Delete card">ðŸ—‘ Delete</button>
+        <div class="card-edit-overlay">
+          <label>Title</label><input type="text" class="edit-title-input">
+          <label>Workbench</label>
+          <select class="edit-cat-select">
+            <option>Part Design</option><option>Assembly Design</option>
+            <option>Surface Design</option><option>Drafting</option>
+            <option>Sheet Metal</option><option>Kinematics</option>
+            <option>FEM Analysis</option><option>Other</option>
+          </select>
+          <label>Description</label><textarea class="edit-desc-input" rows="3"></textarea><label>Add Image via URL</label><input type="url" class="edit-img-url-input" placeholder="https://raw.githubusercontent.com/...">
+          <div class="card-edit-actions">
+            <button class="btn-sm btn-sm-primary" onclick="saveCardEdit(this)">Save</button>
+            <button class="btn-sm btn-sm-ghost" onclick="cancelCardEdit(this)">Cancel</button><button class="btn-sm btn-sm-ghost" style="color: var(--accent);">Load Image URL</button><button class="btn-sm btn-sm-ghost" onclick="deleteImage(this)" style="color: #ef4444;">Delete Image</button><button class="btn-sm btn-sm-ghost" onclick="deleteCard(this)" style="color: #ef4444;">Delete</button>
+          </div>
+        </div>
+        <div class="catia-card-title">Clamp-On Front Sight Holder</div>
+        <p class="catia-card-desc">Clamp-On Front Sight Holder for a Martini-Henry rifle is a powerful asset. It moves beyond simple shapes to demonstrate your ability to solve real-world mechanical problems with precision.</p>
+      </div></div><div class="catia-card reveal visible" data-cat="Part Design" data-id="108">
+      <div class="catia-img-wrap">
+        <img alt="Flanged Keyplate" src="./Naga_Siva_Kumar_Boga_Portfolio_FIXED_files/Naga Siva Kumar Boga — Design &amp; Engineering(1) - Copy.html" class="loaded">
+        <div class="placeholder" style="display: none;">
+          <div class="placeholder-icon">âš™</div>
+          <div class="placeholder-label">Flanged Keyplate</div>
+          <button class="placeholder-upload-btn" onclick="triggerUpload(this)">Add Image</button>
+        </div>
+        <span class="cat-badge">Part Design</span>
+      </div>
+      <div class="catia-card-body">
+        <button class="card-edit-btn" onclick="openCardEdit(this)" title="Edit title/category">âœ Edit</button>
+        <button class="card-delete-btn" onclick="deleteCard(this)" title="Delete card">ðŸ—‘ Delete</button>
+        <div class="card-edit-overlay">
+          <label>Title</label><input type="text" class="edit-title-input">
+          <label>Workbench</label>
+          <select class="edit-cat-select">
+            <option>Part Design</option><option>Assembly Design</option>
+            <option>Surface Design</option><option>Drafting</option>
+            <option>Sheet Metal</option><option>Kinematics</option>
+            <option>FEM Analysis</option><option>Other</option>
+          </select>
+          <label>Description</label><textarea class="edit-desc-input" rows="3"></textarea><label>Add Image via URL</label><input type="url" class="edit-img-url-input" placeholder="https://raw.githubusercontent.com/...">
+          <div class="card-edit-actions">
+            <button class="btn-sm btn-sm-primary" onclick="saveCardEdit(this)">Save</button>
+            <button class="btn-sm btn-sm-ghost" onclick="cancelCardEdit(this)">Cancel</button><button class="btn-sm btn-sm-ghost" style="color: var(--accent);">Load Image URL</button><button class="btn-sm btn-sm-ghost" onclick="deleteImage(this)" style="color: #ef4444;">Delete Image</button><button class="btn-sm btn-sm-ghost" onclick="deleteCard(this)" style="color: #ef4444;">Delete</button>
+          </div>
+        </div>
+        <div class="catia-card-title">Flanged Keyplate</div>
+        <p class="catia-card-desc">Keyplate used to secure and align rotating shafts with other machine elements like gears or pulleys.</p>
+      </div></div><div class="catia-card reveal visible" data-cat="Part Design" data-id="109">
+      <div class="catia-img-wrap">
+        <img alt="Clamp-On Front Sight Holder" src="./Naga_Siva_Kumar_Boga_Portfolio_FIXED_files/Naga Siva Kumar Boga — Design &amp; Engineering(1) - Copy.html" class="loaded">
+        <div class="placeholder" style="display: none;">
+          <div class="placeholder-icon">âš™</div>
+          <div class="placeholder-label">Clamp-On Front Sight Holder</div>
+          <button class="placeholder-upload-btn" onclick="triggerUpload(this)">Add Image</button>
+        </div>
+        <span class="cat-badge">Part Design</span>
+      </div>
+      <div class="catia-card-body">
+        <button class="card-edit-btn" onclick="openCardEdit(this)" title="Edit title/category">âœ Edit</button>
+        <button class="card-delete-btn" onclick="deleteCard(this)" title="Delete card">ðŸ—‘ Delete</button>
+        <div class="card-edit-overlay">
+          <label>Title</label><input type="text" class="edit-title-input">
+          <label>Workbench</label>
+          <select class="edit-cat-select">
+            <option>Part Design</option><option>Assembly Design</option>
+            <option>Surface Design</option><option>Drafting</option>
+            <option>Sheet Metal</option><option>Kinematics</option>
+            <option>FEM Analysis</option><option>Other</option>
+          </select>
+          <label>Description</label><textarea class="edit-desc-input" rows="3"></textarea><label>Add Image via URL</label><input type="url" class="edit-img-url-input" placeholder="https://raw.githubusercontent.com/...">
+          <div class="card-edit-actions">
+            <button class="btn-sm btn-sm-primary" onclick="saveCardEdit(this)">Save</button>
+            <button class="btn-sm btn-sm-ghost" onclick="cancelCardEdit(this)">Cancel</button><button class="btn-sm btn-sm-ghost" style="color: var(--accent);">Load Image URL</button><button class="btn-sm btn-sm-ghost" onclick="deleteImage(this)" style="color: #ef4444;">Delete Image</button><button class="btn-sm btn-sm-ghost" onclick="deleteCard(this)" style="color: #ef4444;">Delete</button>
+          </div>
+        </div>
+        <div class="catia-card-title">Clamp-On Front Sight Holder</div>
+        <p class="catia-card-desc">This clamp allows a shooter to add a taller front sight to correct the point of impact without permanently modifying or damaging a valuable historic firearm.</p>
+      </div></div><div class="catia-card reveal visible" data-cat="Part Design" data-id="110">
+      <div class="catia-img-wrap">
+        <img alt="Ratchet Wheel" src="./Naga_Siva_Kumar_Boga_Portfolio_FIXED_files/Naga Siva Kumar Boga — Design &amp; Engineering(1) - Copy.html" class="loaded">
+        <div class="placeholder" style="display: none;">
+          <div class="placeholder-icon">âš™</div>
+          <div class="placeholder-label">Ratchet Wheel</div>
+          <button class="placeholder-upload-btn" onclick="triggerUpload(this)">Add Image</button>
+        </div>
+        <span class="cat-badge">Part Design</span>
+      </div>
+      <div class="catia-card-body">
+        <button class="card-edit-btn" onclick="openCardEdit(this)" title="Edit title/category">âœ Edit</button>
+        <button class="card-delete-btn" onclick="deleteCard(this)" title="Delete card">ðŸ—‘ Delete</button>
+        <div class="card-edit-overlay">
+          <label>Title</label><input type="text" class="edit-title-input">
+          <label>Workbench</label>
+          <select class="edit-cat-select">
+            <option>Part Design</option><option>Assembly Design</option>
+            <option>Surface Design</option><option>Drafting</option>
+            <option>Sheet Metal</option><option>Kinematics</option>
+            <option>FEM Analysis</option><option>Other</option>
+          </select>
+          <label>Description</label><textarea class="edit-desc-input" rows="3"></textarea><label>Add Image via URL</label><input type="url" class="edit-img-url-input" placeholder="https://raw.githubusercontent.com/...">
+          <div class="card-edit-actions">
+            <button class="btn-sm btn-sm-primary" onclick="saveCardEdit(this)">Save</button>
+            <button class="btn-sm btn-sm-ghost" onclick="cancelCardEdit(this)">Cancel</button><button class="btn-sm btn-sm-ghost" style="color: var(--accent);">Load Image URL</button><button class="btn-sm btn-sm-ghost" onclick="deleteImage(this)" style="color: #ef4444;">Delete Image</button><button class="btn-sm btn-sm-ghost" onclick="deleteCard(this)" style="color: #ef4444;">Delete</button>
+          </div>
+        </div>
+        <div class="catia-card-title">Ratchet Wheel</div>
+        <p class="catia-card-desc">A mechanical component designed to allow continuous linear or rotary motion in only one direction while preventing motion in the opposite direction.</p>
+      </div></div><div class="catia-card reveal visible" data-cat="Part Design" data-id="111">
+      <div class="catia-img-wrap">
+        <img alt="Truss Beam" src="./Naga_Siva_Kumar_Boga_Portfolio_FIXED_files/Naga Siva Kumar Boga — Design &amp; Engineering(1) - Copy.html" class="loaded">
+        <div class="placeholder" style="display: none;">
+          <div class="placeholder-icon">âš™</div>
+          <div class="placeholder-label">Truss Beam</div>
+          <button class="placeholder-upload-btn" onclick="triggerUpload(this)">Add Image</button>
+        </div>
+        <span class="cat-badge">Part Design</span>
+      </div>
+      <div class="catia-card-body">
+        <button class="card-edit-btn" onclick="openCardEdit(this)" title="Edit title/category">âœ Edit</button>
+        <button class="card-delete-btn" onclick="deleteCard(this)" title="Delete card">ðŸ—‘ Delete</button>
+        <div class="card-edit-overlay">
+          <label>Title</label><input type="text" class="edit-title-input">
+          <label>Workbench</label>
+          <select class="edit-cat-select">
+            <option>Part Design</option><option>Assembly Design</option>
+            <option>Surface Design</option><option>Drafting</option>
+            <option>Sheet Metal</option><option>Kinematics</option>
+            <option>FEM Analysis</option><option>Other</option>
+          </select>
+          <label>Description</label><textarea class="edit-desc-input" rows="3"></textarea><label>Add Image via URL</label><input type="url" class="edit-img-url-input" placeholder="https://raw.githubusercontent.com/...">
+          <div class="card-edit-actions">
+            <button class="btn-sm btn-sm-primary" onclick="saveCardEdit(this)">Save</button>
+            <button class="btn-sm btn-sm-ghost" onclick="cancelCardEdit(this)">Cancel</button><button class="btn-sm btn-sm-ghost" style="color: var(--accent);">Load Image URL</button><button class="btn-sm btn-sm-ghost" onclick="deleteImage(this)" style="color: #ef4444;">Delete Image</button><button class="btn-sm btn-sm-ghost" onclick="deleteCard(this)" style="color: #ef4444;">Delete</button>
+          </div>
+        </div>
+        <div class="catia-card-title">Truss Beam</div>
+        <p class="catia-card-desc">Critical structural component designed for high strength-to-weight performance in various engineering applications.</p>
+      </div></div><div class="catia-card reveal visible" data-cat="Part Design" data-id="112">
+      <div class="catia-img-wrap">
+        <img alt="Gear Pump Body" src="./Naga_Siva_Kumar_Boga_Portfolio_FIXED_files/Naga Siva Kumar Boga — Design &amp; Engineering(1) - Copy.html" class="loaded">
+        <div class="placeholder" style="display: none;">
+          <div class="placeholder-icon">âš™</div>
+          <div class="placeholder-label">Gear Pump Body</div>
+          <button class="placeholder-upload-btn" onclick="triggerUpload(this)">Add Image</button>
+        </div>
+        <span class="cat-badge">Part Design</span>
+      </div>
+      <div class="catia-card-body">
+        <button class="card-edit-btn" onclick="openCardEdit(this)" title="Edit title/category">âœ Edit</button>
+        <button class="card-delete-btn" onclick="deleteCard(this)" title="Delete card">ðŸ—‘ Delete</button>
+        <div class="card-edit-overlay">
+          <label>Title</label><input type="text" class="edit-title-input">
+          <label>Workbench</label>
+          <select class="edit-cat-select">
+            <option>Part Design</option><option>Assembly Design</option>
+            <option>Surface Design</option><option>Drafting</option>
+            <option>Sheet Metal</option><option>Kinematics</option>
+            <option>FEM Analysis</option><option>Other</option>
+          </select>
+          <label>Description</label><textarea class="edit-desc-input" rows="3"></textarea><label>Add Image via URL</label><input type="url" class="edit-img-url-input" placeholder="https://raw.githubusercontent.com/...">
+          <div class="card-edit-actions">
+            <button class="btn-sm btn-sm-primary" onclick="saveCardEdit(this)">Save</button>
+            <button class="btn-sm btn-sm-ghost" onclick="cancelCardEdit(this)">Cancel</button><button class="btn-sm btn-sm-ghost" style="color: var(--accent);">Load Image URL</button><button class="btn-sm btn-sm-ghost" onclick="deleteImage(this)" style="color: #ef4444;">Delete Image</button><button class="btn-sm btn-sm-ghost" onclick="deleteCard(this)" style="color: #ef4444;">Delete</button>
+          </div>
+        </div>
+        <div class="catia-card-title">Gear Pump Body</div>
+        <p class="catia-card-desc">Used in hydraulic systems.</p>
+      </div></div><div class="catia-card reveal visible" data-cat="Part Design" data-id="113">
+      <div class="catia-img-wrap">
+        <img alt="V-Engine Block" src="./Naga_Siva_Kumar_Boga_Portfolio_FIXED_files/Naga Siva Kumar Boga — Design &amp; Engineering(1) - Copy.html" class="loaded">
+        <div class="placeholder" style="display: none;">
+          <div class="placeholder-icon">âš™</div>
+          <div class="placeholder-label">V-Engine Block</div>
+          <button class="placeholder-upload-btn" onclick="triggerUpload(this)">Add Image</button>
+        </div>
+        <span class="cat-badge">Part Design</span>
+      </div>
+      <div class="catia-card-body">
+        <button class="card-edit-btn" onclick="openCardEdit(this)" title="Edit title/category">âœ Edit</button>
+        <button class="card-delete-btn" onclick="deleteCard(this)" title="Delete card">ðŸ—‘ Delete</button>
+        <div class="card-edit-overlay">
+          <label>Title</label><input type="text" class="edit-title-input">
+          <label>Workbench</label>
+          <select class="edit-cat-select">
+            <option>Part Design</option><option>Assembly Design</option>
+            <option>Surface Design</option><option>Drafting</option>
+            <option>Sheet Metal</option><option>Kinematics</option>
+            <option>FEM Analysis</option><option>Other</option>
+          </select>
+          <label>Description</label><textarea class="edit-desc-input" rows="3"></textarea><label>Add Image via URL</label><input type="url" class="edit-img-url-input" placeholder="https://raw.githubusercontent.com/...">
+          <div class="card-edit-actions">
+            <button class="btn-sm btn-sm-primary" onclick="saveCardEdit(this)">Save</button>
+            <button class="btn-sm btn-sm-ghost" onclick="cancelCardEdit(this)">Cancel</button><button class="btn-sm btn-sm-ghost" style="color: var(--accent);">Load Image URL</button><button class="btn-sm btn-sm-ghost" onclick="deleteImage(this)" style="color: #ef4444;">Delete Image</button><button class="btn-sm btn-sm-ghost" onclick="deleteCard(this)" style="color: #ef4444;">Delete</button>
+          </div>
+        </div>
+        <div class="catia-card-title">V-Engine Block</div>
+        <p class="catia-card-desc">This V2 (V-twin) Engine Block exists across several real-time, high-performance industries. Its compact "V" shape is specifically engineered for applications where space is limited but high power-to-weight ratios are critical.</p>
+      </div></div><div class="catia-card reveal visible" data-cat="Part Design" data-id="114">
+      <div class="catia-img-wrap">
+        <img alt="Stock Support Base" src="./Naga_Siva_Kumar_Boga_Portfolio_FIXED_files/Naga Siva Kumar Boga — Design &amp; Engineering(1) - Copy.html" class="loaded">
+        <div class="placeholder" style="display: none;">
+          <div class="placeholder-icon">âš™</div>
+          <div class="placeholder-label">Stock Support Base</div>
+          <button class="placeholder-upload-btn" onclick="triggerUpload(this)">Add Image</button>
+        </div>
+        <span class="cat-badge">Part Design</span>
+      </div>
+      <div class="catia-card-body">
+        <button class="card-edit-btn" onclick="openCardEdit(this)" title="Edit title/category">âœ Edit</button>
+        <button class="card-delete-btn" onclick="deleteCard(this)" title="Delete card">ðŸ—‘ Delete</button>
+        <div class="card-edit-overlay">
+          <label>Title</label><input type="text" class="edit-title-input">
+          <label>Workbench</label>
+          <select class="edit-cat-select">
+            <option>Part Design</option><option>Assembly Design</option>
+            <option>Surface Design</option><option>Drafting</option>
+            <option>Sheet Metal</option><option>Kinematics</option>
+            <option>FEM Analysis</option><option>Other</option>
+          </select>
+          <label>Description</label><textarea class="edit-desc-input" rows="3"></textarea><label>Add Image via URL</label><input type="url" class="edit-img-url-input" placeholder="https://raw.githubusercontent.com/...">
+          <div class="card-edit-actions">
+            <button class="btn-sm btn-sm-primary" onclick="saveCardEdit(this)">Save</button>
+            <button class="btn-sm btn-sm-ghost" onclick="cancelCardEdit(this)">Cancel</button><button class="btn-sm btn-sm-ghost" style="color: var(--accent);">Load Image URL</button><button class="btn-sm btn-sm-ghost" onclick="deleteImage(this)" style="color: #ef4444;">Delete Image</button><button class="btn-sm btn-sm-ghost" onclick="deleteCard(this)" style="color: #ef4444;">Delete</button>
+          </div>
+        </div>
+        <div class="catia-card-title">Stock Support Base</div>
+        <p class="catia-card-desc">Used in workshops to support long workpieces, such as bars or pipes.</p>
+      </div></div><div class="catia-card reveal visible" data-cat="Part Design" data-id="115">
+      <div class="catia-img-wrap">
+        <img alt="Binoculars" src="./Naga_Siva_Kumar_Boga_Portfolio_FIXED_files/Naga Siva Kumar Boga — Design &amp; Engineering(1) - Copy.html" class="loaded">
+        <div class="placeholder" style="display: none;">
+          <div class="placeholder-icon">ðŸ”§</div>
+          <div class="placeholder-label">Binoculars</div>
+          <button class="placeholder-upload-btn" onclick="triggerUpload(this)">Add Image</button>
+        </div>
+        <span class="cat-badge">Part Design</span>
+      </div>
+      <div class="catia-card-body">
+        <button class="card-edit-btn" onclick="openCardEdit(this)" title="Edit title/category">âœ Edit</button>
+        <button class="card-delete-btn" onclick="deleteCard(this)" title="Delete card">ðŸ—‘ Delete</button>
+        <div class="card-edit-overlay">
+          <label>Title</label><input type="text" class="edit-title-input">
+          <label>Workbench</label>
+          <select class="edit-cat-select">
+            <option>Part Design</option><option>Assembly Design</option>
+            <option>Surface Design</option><option>Drafting</option>
+            <option>Sheet Metal</option><option>Kinematics</option>
+            <option>FEM Analysis</option><option>Other</option>
+          </select>
+          <label>Description</label><textarea class="edit-desc-input" rows="3"></textarea><label>Add Image via URL</label><input type="url" class="edit-img-url-input" placeholder="https://raw.githubusercontent.com/...">
+          <div class="card-edit-actions">
+            <button class="btn-sm btn-sm-primary" onclick="saveCardEdit(this)">Save</button>
+            <button class="btn-sm btn-sm-ghost" onclick="cancelCardEdit(this)">Cancel</button><button class="btn-sm btn-sm-ghost" style="color: var(--accent);">Load Image URL</button><button class="btn-sm btn-sm-ghost" onclick="deleteImage(this)" style="color: #ef4444;">Delete Image</button><button class="btn-sm btn-sm-ghost" onclick="deleteCard(this)" style="color: #ef4444;">Delete</button>
+          </div>
+        </div>
+        <div class="catia-card-title">Binoculars</div>
+        <p class="catia-card-desc">Binoculars are versatile optical instruments used across recreational, professional, and scientific fields to magnify distant objects.</p>
+      </div></div><div class="catia-card reveal visible" data-cat="Part Design" data-id="101">
+      <div class="catia-img-wrap">
+        <img alt="Finned Cylinder" src="./Naga_Siva_Kumar_Boga_Portfolio_FIXED_files/Naga Siva Kumar Boga — Design &amp; Engineering.html" class="">
+        <div class="placeholder" style="display: flex;">
+          <div class="placeholder-icon">âš™</div>
+          <div class="placeholder-label">Finned Cylinder</div>
+          <button class="placeholder-upload-btn" onclick="triggerUpload(this)">Add Image</button>
+        </div>
+        <span class="cat-badge">Part Design</span>
+      </div>
+      <div class="catia-card-body">
+        <button class="card-edit-btn" onclick="openCardEdit(this)" title="Edit title/category">âœ Edit</button>
+        <button class="card-delete-btn" onclick="deleteCard(this)" title="Delete card">ðŸ—‘ Delete</button>
+        <div class="card-edit-overlay">
+          <label>Title</label><input type="text" class="edit-title-input">
+          <label>Workbench</label>
+          <select class="edit-cat-select">
+            <option>Part Design</option><option>Assembly Design</option>
+            <option>Surface Design</option><option>Drafting</option>
+            <option>Sheet Metal</option><option>Kinematics</option>
+            <option>FEM Analysis</option><option>Other</option>
+          </select>
+          <label>Description</label><textarea class="edit-desc-input" rows="3"></textarea><label>Add Image via URL</label><input type="url" class="edit-img-url-input" placeholder="https://raw.githubusercontent.com/...">
+          <div class="card-edit-actions">
+            <button class="btn-sm btn-sm-primary" onclick="saveCardEdit(this)">Save</button>
+            <button class="btn-sm btn-sm-ghost" onclick="cancelCardEdit(this)">Cancel</button><button class="btn-sm btn-sm-ghost" style="color: var(--accent);">Load Image URL</button><button class="btn-sm btn-sm-ghost" onclick="deleteImage(this)" style="color: #ef4444;">Delete Image</button><button class="btn-sm btn-sm-ghost" onclick="deleteCard(this)" style="color: #ef4444;">Delete</button>
+          </div>
+        </div>
+        <div class="catia-card-title">Finned Cylinder</div>
+        <p class="catia-card-desc">A Engineering component modeled to represent a Heat Dissipation Unit or an Air-Cooled Engine Cylinder.</p>
+      </div></div><div class="catia-card reveal visible" data-cat="Kinematics" data-id="102">
+      <div class="catia-img-wrap">
+        <img alt="Connecting Link" src="./Naga_Siva_Kumar_Boga_Portfolio_FIXED_files/Naga Siva Kumar Boga — Design &amp; Engineering.html" class="loaded">
+        <div class="placeholder" style="display: none;">
+          <div class="placeholder-icon">âš¡</div>
+          <div class="placeholder-label">Connecting Link</div>
+          <button class="placeholder-upload-btn" onclick="triggerUpload(this)">Add Image</button>
+        </div>
+        <span class="cat-badge">Kinematics</span>
+      </div>
+      <div class="catia-card-body">
+        <button class="card-edit-btn" onclick="openCardEdit(this)" title="Edit title/category">âœ Edit</button>
+        <button class="card-delete-btn" onclick="deleteCard(this)" title="Delete card">ðŸ—‘ Delete</button>
+        <div class="card-edit-overlay">
+          <label>Title</label><input type="text" class="edit-title-input">
+          <label>Workbench</label>
+          <select class="edit-cat-select">
+            <option>Part Design</option><option>Assembly Design</option>
+            <option>Surface Design</option><option>Drafting</option>
+            <option>Sheet Metal</option><option>Kinematics</option>
+            <option>FEM Analysis</option><option>Other</option>
+          </select>
+          <label>Description</label><textarea class="edit-desc-input" rows="3"></textarea><label>Add Image via URL</label><input type="url" class="edit-img-url-input" placeholder="https://raw.githubusercontent.com/...">
+          <div class="card-edit-actions">
+            <button class="btn-sm btn-sm-primary" onclick="saveCardEdit(this)">Save</button>
+            <button class="btn-sm btn-sm-ghost" onclick="cancelCardEdit(this)">Cancel</button><button class="btn-sm btn-sm-ghost" style="color: var(--accent);">Load Image URL</button><button class="btn-sm btn-sm-ghost" onclick="deleteImage(this)" style="color: #ef4444;">Delete Image</button><button class="btn-sm btn-sm-ghost" onclick="deleteCard(this)" style="color: #ef4444;">Delete</button>
+          </div>
+        </div>
+        <div class="catia-card-title">Connecting Link</div>
+        <p class="catia-card-desc">Similar links are used in rocker arm assemblies to translate the motion of a cam or pushrod to a valve stem that is offset from the center.</p>
+      </div></div><div class="catia-card reveal visible" data-cat="Part Design" data-id="103">
+      <div class="catia-img-wrap">
+        <img alt="Engine Piston" src="./Naga_Siva_Kumar_Boga_Portfolio_FIXED_files/Naga Siva Kumar Boga — Design &amp; Engineering.html" class="">
+        <div class="placeholder" style="display: flex;">
+          <div class="placeholder-icon">âš™</div>
+          <div class="placeholder-label">Engine Piston</div>
+          <button class="placeholder-upload-btn" onclick="triggerUpload(this)">Add Image</button>
+        </div>
+        <span class="cat-badge">Part Design</span>
+      </div>
+      <div class="catia-card-body">
+        <button class="card-edit-btn" onclick="openCardEdit(this)" title="Edit title/category">âœ Edit</button>
+        <button class="card-delete-btn" onclick="deleteCard(this)" title="Delete card">ðŸ—‘ Delete</button>
+        <div class="card-edit-overlay">
+          <label>Title</label><input type="text" class="edit-title-input">
+          <label>Workbench</label>
+          <select class="edit-cat-select">
+            <option>Part Design</option><option>Assembly Design</option>
+            <option>Surface Design</option><option>Drafting</option>
+            <option>Sheet Metal</option><option>Kinematics</option>
+            <option>FEM Analysis</option><option>Other</option>
+          </select>
+          <label>Description</label><textarea class="edit-desc-input" rows="3"></textarea><label>Add Image via URL</label><input type="url" class="edit-img-url-input" placeholder="https://raw.githubusercontent.com/...">
+          <div class="card-edit-actions">
+            <button class="btn-sm btn-sm-primary" onclick="saveCardEdit(this)">Save</button>
+            <button class="btn-sm btn-sm-ghost" onclick="cancelCardEdit(this)">Cancel</button><button class="btn-sm btn-sm-ghost" style="color: var(--accent);">Load Image URL</button><button class="btn-sm btn-sm-ghost" onclick="deleteImage(this)" style="color: #ef4444;">Delete Image</button><button class="btn-sm btn-sm-ghost" onclick="deleteCard(this)" style="color: #ef4444;">Delete</button>
+          </div>
+        </div>
+        <div class="catia-card-title">Engine Piston</div>
+        <p class="catia-card-desc">Every car, motorcycle, and lawnmower uses these to convert the energy from expanding gases into the mechanical force that turns the wheels.</p>
+      </div></div><div class="catia-card reveal visible" data-cat="Part Design" data-id="104">
+      <div class="catia-img-wrap">
+        <img alt="Master Connecting Rod" src="./Naga_Siva_Kumar_Boga_Portfolio_FIXED_files/Naga Siva Kumar Boga — Design &amp; Engineering.html" class="">
+        <div class="placeholder" style="display: flex;">
+          <div class="placeholder-icon">âš™</div>
+          <div class="placeholder-label">Master Connecting Rod</div>
+          <button class="placeholder-upload-btn" onclick="triggerUpload(this)">Add Image</button>
+        </div>
+        <span class="cat-badge">Part Design</span>
+      </div>
+      <div class="catia-card-body">
+        <button class="card-edit-btn" onclick="openCardEdit(this)" title="Edit title/category">âœ Edit</button>
+        <button class="card-delete-btn" onclick="deleteCard(this)" title="Delete card">ðŸ—‘ Delete</button>
+        <div class="card-edit-overlay">
+          <label>Title</label><input type="text" class="edit-title-input">
+          <label>Workbench</label>
+          <select class="edit-cat-select">
+            <option>Part Design</option><option>Assembly Design</option>
+            <option>Surface Design</option><option>Drafting</option>
+            <option>Sheet Metal</option><option>Kinematics</option>
+            <option>FEM Analysis</option><option>Other</option>
+          </select>
+          <label>Description</label><textarea class="edit-desc-input" rows="3"></textarea><label>Add Image via URL</label><input type="url" class="edit-img-url-input" placeholder="https://raw.githubusercontent.com/...">
+          <div class="card-edit-actions">
+            <button class="btn-sm btn-sm-primary" onclick="saveCardEdit(this)">Save</button>
+            <button class="btn-sm btn-sm-ghost" onclick="cancelCardEdit(this)">Cancel</button><button class="btn-sm btn-sm-ghost" style="color: var(--accent);">Load Image URL</button><button class="btn-sm btn-sm-ghost" onclick="deleteImage(this)" style="color: #ef4444;">Delete Image</button><button class="btn-sm btn-sm-ghost" onclick="deleteCard(this)" style="color: #ef4444;">Delete</button>
+          </div>
+        </div>
+        <div class="catia-card-title">Master Connecting Rod</div>
+        <p class="catia-card-desc">In radial engines, the Master Rod bears the full force of all other cylinders.</p>
+      </div></div><div class="catia-card reveal visible" data-cat="Part Design" data-id="105">
+      <div class="catia-img-wrap">
+        <img alt="Connecting Rod" src="./Naga_Siva_Kumar_Boga_Portfolio_FIXED_files/Naga Siva Kumar Boga — Design &amp; Engineering.html" class="">
+        <div class="placeholder" style="display: flex;">
+          <div class="placeholder-icon">âš™</div>
+          <div class="placeholder-label">Connecting Rod</div>
+          <button class="placeholder-upload-btn" onclick="triggerUpload(this)">Add Image</button>
+        </div>
+        <span class="cat-badge">Part Design</span>
+      </div>
+      <div class="catia-card-body">
+        <button class="card-edit-btn" onclick="openCardEdit(this)" title="Edit title/category">âœ Edit</button>
+        <button class="card-delete-btn" onclick="deleteCard(this)" title="Delete card">ðŸ—‘ Delete</button>
+        <div class="card-edit-overlay">
+          <label>Title</label><input type="text" class="edit-title-input">
+          <label>Workbench</label>
+          <select class="edit-cat-select">
+            <option>Part Design</option><option>Assembly Design</option>
+            <option>Surface Design</option><option>Drafting</option>
+            <option>Sheet Metal</option><option>Kinematics</option>
+            <option>FEM Analysis</option><option>Other</option>
+          </select>
+          <label>Description</label><textarea class="edit-desc-input" rows="3"></textarea><label>Add Image via URL</label><input type="url" class="edit-img-url-input" placeholder="https://raw.githubusercontent.com/...">
+          <div class="card-edit-actions">
+            <button class="btn-sm btn-sm-primary" onclick="saveCardEdit(this)">Save</button>
+            <button class="btn-sm btn-sm-ghost" onclick="cancelCardEdit(this)">Cancel</button><button class="btn-sm btn-sm-ghost" style="color: var(--accent);">Load Image URL</button><button class="btn-sm btn-sm-ghost" onclick="deleteImage(this)" style="color: #ef4444;">Delete Image</button><button class="btn-sm btn-sm-ghost" onclick="deleteCard(this)" style="color: #ef4444;">Delete</button>
+          </div>
+        </div>
+        <div class="catia-card-title">Connecting Rod</div>
+        <p class="catia-card-desc">Component that links a piston to a crankshaft, converting linear motion into rotational motion.</p>
+      </div></div><div class="catia-card reveal visible" data-cat="Assembly Design" data-id="106">
+      <div class="catia-img-wrap">
+        <img alt="5-Cylinder Radial Engine" src="./Naga_Siva_Kumar_Boga_Portfolio_FIXED_files/Naga Siva Kumar Boga — Design &amp; Engineering.html" class="">
+        <div class="placeholder" style="display: flex;">
+          <div class="placeholder-icon">ðŸ”§</div>
+          <div class="placeholder-label">5-Cylinder Radial Engine</div>
+          <button class="placeholder-upload-btn" onclick="triggerUpload(this)">Add Image</button>
+        </div>
+        <span class="cat-badge">Assembly Design</span>
+      </div>
+      <div class="catia-card-body">
+        <button class="card-edit-btn" onclick="openCardEdit(this)" title="Edit title/category">âœ Edit</button>
+        <button class="card-delete-btn" onclick="deleteCard(this)" title="Delete card">ðŸ—‘ Delete</button>
+        <div class="card-edit-overlay">
+          <label>Title</label><input type="text" class="edit-title-input">
+          <label>Workbench</label>
+          <select class="edit-cat-select">
+            <option>Part Design</option><option>Assembly Design</option>
+            <option>Surface Design</option><option>Drafting</option>
+            <option>Sheet Metal</option><option>Kinematics</option>
+            <option>FEM Analysis</option><option>Other</option>
+          </select>
+          <label>Description</label><textarea class="edit-desc-input" rows="3"></textarea><label>Add Image via URL</label><input type="url" class="edit-img-url-input" placeholder="https://raw.githubusercontent.com/...">
+          <div class="card-edit-actions">
+            <button class="btn-sm btn-sm-primary" onclick="saveCardEdit(this)">Save</button>
+            <button class="btn-sm btn-sm-ghost" onclick="cancelCardEdit(this)">Cancel</button><button class="btn-sm btn-sm-ghost" style="color: var(--accent);">Load Image URL</button><button class="btn-sm btn-sm-ghost" onclick="deleteImage(this)" style="color: #ef4444;">Delete Image</button><button class="btn-sm btn-sm-ghost" onclick="deleteCard(this)" style="color: #ef4444;">Delete</button>
+          </div>
+        </div>
+        <div class="catia-card-title">5-Cylinder Radial Engine</div>
+        <p class="catia-card-desc">The central "Master Rod" is the primary driver, connected to one piston. The other four "Link Rods" are articulated to the master rod's big end, ensuring all five pistons are synchronized.</p>
+      </div></div><div class="catia-card reveal visible" data-cat="Part Design" data-id="107">
+      <div class="catia-img-wrap">
+        <img alt="Bevel Gear" src="./Naga_Siva_Kumar_Boga_Portfolio_FIXED_files/Naga Siva Kumar Boga — Design &amp; Engineering.html" class="">
+        <div class="placeholder" style="display: flex;">
+          <div class="placeholder-icon">âš™</div>
+          <div class="placeholder-label">Bevel Gear</div>
+          <button class="placeholder-upload-btn" onclick="triggerUpload(this)">Add Image</button>
+        </div>
+        <span class="cat-badge">Part Design</span>
+      </div>
+      <div class="catia-card-body">
+        <button class="card-edit-btn" onclick="openCardEdit(this)" title="Edit title/category">âœ Edit</button>
+        <button class="card-delete-btn" onclick="deleteCard(this)" title="Delete card">ðŸ—‘ Delete</button>
+        <div class="card-edit-overlay">
+          <label>Title</label><input type="text" class="edit-title-input">
+          <label>Workbench</label>
+          <select class="edit-cat-select">
+            <option>Part Design</option><option>Assembly Design</option>
+            <option>Surface Design</option><option>Drafting</option>
+            <option>Sheet Metal</option><option>Kinematics</option>
+            <option>FEM Analysis</option><option>Other</option>
+          </select>
+          <label>Description</label><textarea class="edit-desc-input" rows="3"></textarea><label>Add Image via URL</label><input type="url" class="edit-img-url-input" placeholder="https://raw.githubusercontent.com/...">
+          <div class="card-edit-actions">
+            <button class="btn-sm btn-sm-primary" onclick="saveCardEdit(this)">Save</button>
+            <button class="btn-sm btn-sm-ghost" onclick="cancelCardEdit(this)">Cancel</button><button class="btn-sm btn-sm-ghost" style="color: var(--accent);">Load Image URL</button><button class="btn-sm btn-sm-ghost" onclick="deleteImage(this)" style="color: #ef4444;">Delete Image</button><button class="btn-sm btn-sm-ghost" onclick="deleteCard(this)" style="color: #ef4444;">Delete</button>
+          </div>
+        </div>
+        <div class="catia-card-title">Bevel Gear</div>
+        <p class="catia-card-desc">Designed to transmit power between two intersecting shafts (typically at a 90 degree angle).</p>
+      </div></div><div class="catia-card reveal visible" data-cat="Part Design" data-id="108">
+      <div class="catia-img-wrap">
+        <img alt="Front Radial Engine Crankshaft" src="./Naga_Siva_Kumar_Boga_Portfolio_FIXED_files/Naga Siva Kumar Boga — Design &amp; Engineering.html" class="">
+        <div class="placeholder" style="display: flex;">
+          <div class="placeholder-icon">âš™</div>
+          <div class="placeholder-label">Front Radial Engine Crankshaft</div>
+          <button class="placeholder-upload-btn" onclick="triggerUpload(this)">Add Image</button>
+        </div>
+        <span class="cat-badge">Part Design</span>
+      </div>
+      <div class="catia-card-body">
+        <button class="card-edit-btn" onclick="openCardEdit(this)" title="Edit title/category">âœ Edit</button>
+        <button class="card-delete-btn" onclick="deleteCard(this)" title="Delete card">ðŸ—‘ Delete</button>
+        <div class="card-edit-overlay">
+          <label>Title</label><input type="text" class="edit-title-input">
+          <label>Workbench</label>
+          <select class="edit-cat-select">
+            <option>Part Design</option><option>Assembly Design</option>
+            <option>Surface Design</option><option>Drafting</option>
+            <option>Sheet Metal</option><option>Kinematics</option>
+            <option>FEM Analysis</option><option>Other</option>
+          </select>
+          <label>Description</label><textarea class="edit-desc-input" rows="3"></textarea><label>Add Image via URL</label><input type="url" class="edit-img-url-input" placeholder="https://raw.githubusercontent.com/...">
+          <div class="card-edit-actions">
+            <button class="btn-sm btn-sm-primary" onclick="saveCardEdit(this)">Save</button>
+            <button class="btn-sm btn-sm-ghost" onclick="cancelCardEdit(this)">Cancel</button><button class="btn-sm btn-sm-ghost" style="color: var(--accent);">Load Image URL</button><button class="btn-sm btn-sm-ghost" onclick="deleteImage(this)" style="color: #ef4444;">Delete Image</button><button class="btn-sm btn-sm-ghost" onclick="deleteCard(this)" style="color: #ef4444;">Delete</button>
+          </div>
+        </div>
+        <div class="catia-card-title">Front Radial Engine Crankshaft</div>
+        <p class="catia-card-desc">A radial crankshaft is a Single-Throw design, specifically engineered to manage the forces of multiple pistons pushing on a single point.</p>
+      </div></div><div class="catia-card reveal visible" data-cat="Part Design" data-id="109">
+      <div class="catia-img-wrap">
+        <img alt="Rear Radial Engine Crankshaft" src="./Naga_Siva_Kumar_Boga_Portfolio_FIXED_files/Naga Siva Kumar Boga — Design &amp; Engineering.html" class="">
+        <div class="placeholder" style="display: flex;">
+          <div class="placeholder-icon">âš™</div>
+          <div class="placeholder-label">Rear Radial Engine Crankshaft</div>
+          <button class="placeholder-upload-btn" onclick="triggerUpload(this)">Add Image</button>
+        </div>
+        <span class="cat-badge">Part Design</span>
+      </div>
+      <div class="catia-card-body">
+        <button class="card-edit-btn" onclick="openCardEdit(this)" title="Edit title/category">âœ Edit</button>
+        <button class="card-delete-btn" onclick="deleteCard(this)" title="Delete card">ðŸ—‘ Delete</button>
+        <div class="card-edit-overlay">
+          <label>Title</label><input type="text" class="edit-title-input">
+          <label>Workbench</label>
+          <select class="edit-cat-select">
+            <option>Part Design</option><option>Assembly Design</option>
+            <option>Surface Design</option><option>Drafting</option>
+            <option>Sheet Metal</option><option>Kinematics</option>
+            <option>FEM Analysis</option><option>Other</option>
+          </select>
+          <label>Description</label><textarea class="edit-desc-input" rows="3"></textarea><label>Add Image via URL</label><input type="url" class="edit-img-url-input" placeholder="https://raw.githubusercontent.com/...">
+          <div class="card-edit-actions">
+            <button class="btn-sm btn-sm-primary" onclick="saveCardEdit(this)">Save</button>
+            <button class="btn-sm btn-sm-ghost" onclick="cancelCardEdit(this)">Cancel</button><button class="btn-sm btn-sm-ghost" style="color: var(--accent);">Load Image URL</button><button class="btn-sm btn-sm-ghost" onclick="deleteImage(this)" style="color: #ef4444;">Delete Image</button><button class="btn-sm btn-sm-ghost" onclick="deleteCard(this)" style="color: #ef4444;">Delete</button>
+          </div>
+        </div>
+        <div class="catia-card-title">Rear Radial Engine Crankshaft</div>
+        <p class="catia-card-desc">Unlike typical automotive crankshafts, radial engines often use a split design to allow for the assembly of a solid-eye master connecting rod.</p>
+      </div></div><div class="catia-card reveal visible" data-cat="Part Design" data-id="110">
+      <div class="catia-img-wrap">
+        <img alt="Crankshaft Web" src="./Naga_Siva_Kumar_Boga_Portfolio_FIXED_files/Naga Siva Kumar Boga — Design &amp; Engineering.html" class="">
+        <div class="placeholder" style="display: flex;">
+          <div class="placeholder-icon">âš™</div>
+          <div class="placeholder-label">Crankshaft Web</div>
+          <button class="placeholder-upload-btn" onclick="triggerUpload(this)">Add Image</button>
+        </div>
+        <span class="cat-badge">Part Design</span>
+      </div>
+      <div class="catia-card-body">
+        <button class="card-edit-btn" onclick="openCardEdit(this)" title="Edit title/category">âœ Edit</button>
+        <button class="card-delete-btn" onclick="deleteCard(this)" title="Delete card">ðŸ—‘ Delete</button>
+        <div class="card-edit-overlay">
+          <label>Title</label><input type="text" class="edit-title-input">
+          <label>Workbench</label>
+          <select class="edit-cat-select">
+            <option>Part Design</option><option>Assembly Design</option>
+            <option>Surface Design</option><option>Drafting</option>
+            <option>Sheet Metal</option><option>Kinematics</option>
+            <option>FEM Analysis</option><option>Other</option>
+          </select>
+          <label>Description</label><textarea class="edit-desc-input" rows="3"></textarea><label>Add Image via URL</label><input type="url" class="edit-img-url-input" placeholder="https://raw.githubusercontent.com/...">
+          <div class="card-edit-actions">
+            <button class="btn-sm btn-sm-primary" onclick="saveCardEdit(this)">Save</button>
+            <button class="btn-sm btn-sm-ghost" onclick="cancelCardEdit(this)">Cancel</button><button class="btn-sm btn-sm-ghost" style="color: var(--accent);">Load Image URL</button><button class="btn-sm btn-sm-ghost" onclick="deleteImage(this)" style="color: #ef4444;">Delete Image</button><button class="btn-sm btn-sm-ghost" onclick="deleteCard(this)" style="color: #ef4444;">Delete</button>
+          </div>
+        </div>
+        <div class="catia-card-title">Crankshaft Web</div>
+        <p class="catia-card-desc">It is the "balancing heart" of a Radial Engine Crankshaft, designed to offset the massive reciprocating forces of the master and link rod assembly.</p>
+      </div></div><div class="catia-card reveal visible" data-cat="Assembly Design" data-id="111">
+      <div class="catia-img-wrap">
+        <img alt="Radial Engine Crankshaft" src="./Naga_Siva_Kumar_Boga_Portfolio_FIXED_files/Naga Siva Kumar Boga — Design &amp; Engineering.html" class="">
+        <div class="placeholder" style="display: flex;">
+          <div class="placeholder-icon">ðŸ”§</div>
+          <div class="placeholder-label">Radial Engine Crankshaft</div>
+          <button class="placeholder-upload-btn" onclick="triggerUpload(this)">Add Image</button>
+        </div>
+        <span class="cat-badge">Assembly Design</span>
+      </div>
+      <div class="catia-card-body">
+        <button class="card-edit-btn" onclick="openCardEdit(this)" title="Edit title/category">âœ Edit</button>
+        <button class="card-delete-btn" onclick="deleteCard(this)" title="Delete card">ðŸ—‘ Delete</button>
+        <div class="card-edit-overlay">
+          <label>Title</label><input type="text" class="edit-title-input">
+          <label>Workbench</label>
+          <select class="edit-cat-select">
+            <option>Part Design</option><option>Assembly Design</option>
+            <option>Surface Design</option><option>Drafting</option>
+            <option>Sheet Metal</option><option>Kinematics</option>
+            <option>FEM Analysis</option><option>Other</option>
+          </select>
+          <label>Description</label><textarea class="edit-desc-input" rows="3"></textarea><label>Add Image via URL</label><input type="url" class="edit-img-url-input" placeholder="https://raw.githubusercontent.com/...">
+          <div class="card-edit-actions">
+            <button class="btn-sm btn-sm-primary" onclick="saveCardEdit(this)">Save</button>
+            <button class="btn-sm btn-sm-ghost" onclick="cancelCardEdit(this)">Cancel</button><button class="btn-sm btn-sm-ghost" style="color: var(--accent);">Load Image URL</button><button class="btn-sm btn-sm-ghost" onclick="deleteImage(this)" style="color: #ef4444;">Delete Image</button><button class="btn-sm btn-sm-ghost" onclick="deleteCard(this)" style="color: #ef4444;">Delete</button>
+          </div>
+        </div>
+        <div class="catia-card-title">Radial Engine Crankshaft</div>
+        <p class="catia-card-desc">Assemble a multi-piece aeronautical crankshaft capable of managing the reciprocating loads of a 5-cylinder radial engine.Front Crankshaft,Rear Crankshaft,Crankshaft Web,Crankpin,Locking Pins/Keys.</p>
+      </div></div><div class="catia-card reveal visible" data-cat="Assembly Design" data-id="112">
+      <div class="catia-img-wrap">
+        <img alt="Engine Cylinder Head" src="./Naga_Siva_Kumar_Boga_Portfolio_FIXED_files/Naga Siva Kumar Boga — Design &amp; Engineering.html" class="">
+        <div class="placeholder" style="display: flex;">
+          <div class="placeholder-icon">ðŸ”§</div>
+          <div class="placeholder-label">Engine Cylinder Head</div>
+          <button class="placeholder-upload-btn" onclick="triggerUpload(this)">Add Image</button>
+        </div>
+        <span class="cat-badge">Assembly Design</span>
+      </div>
+      <div class="catia-card-body">
+        <button class="card-edit-btn" onclick="openCardEdit(this)" title="Edit title/category">âœ Edit</button>
+        <button class="card-delete-btn" onclick="deleteCard(this)" title="Delete card">ðŸ—‘ Delete</button>
+        <div class="card-edit-overlay">
+          <label>Title</label><input type="text" class="edit-title-input">
+          <label>Workbench</label>
+          <select class="edit-cat-select">
+            <option>Part Design</option><option>Assembly Design</option>
+            <option>Surface Design</option><option>Drafting</option>
+            <option>Sheet Metal</option><option>Kinematics</option>
+            <option>FEM Analysis</option><option>Other</option>
+          </select>
+          <label>Description</label><textarea class="edit-desc-input" rows="3"></textarea><label>Add Image via URL</label><input type="url" class="edit-img-url-input" placeholder="https://raw.githubusercontent.com/...">
+          <div class="card-edit-actions">
+            <button class="btn-sm btn-sm-primary" onclick="saveCardEdit(this)">Save</button>
+            <button class="btn-sm btn-sm-ghost" onclick="cancelCardEdit(this)">Cancel</button><button class="btn-sm btn-sm-ghost" style="color: var(--accent);">Load Image URL</button><button class="btn-sm btn-sm-ghost" onclick="deleteImage(this)" style="color: #ef4444;">Delete Image</button><button class="btn-sm btn-sm-ghost" onclick="deleteCard(this)" style="color: #ef4444;">Delete</button>
+          </div>
+        </div>
+        <div class="catia-card-title">Engine Cylinder Head</div>
+        <p class="catia-card-desc">The underside of your model forms the "roof" of the combustion chamber. In a portfolio, you can discuss how its shape influences the swirl and turbulence of the air-fuel mixture to improve engine efficiency.</p>
+      </div></div><div class="catia-card reveal visible" data-cat="Part Design" data-id="113">
+      <div class="catia-img-wrap">
+        <img alt="Engine Cylinder" src="./Naga_Siva_Kumar_Boga_Portfolio_FIXED_files/Naga Siva Kumar Boga — Design &amp; Engineering.html" class="">
+        <div class="placeholder" style="display: flex;">
+          <div class="placeholder-icon">âš™</div>
+          <div class="placeholder-label">Engine Cylinder</div>
+          <button class="placeholder-upload-btn" onclick="triggerUpload(this)">Add Image</button>
+        </div>
+        <span class="cat-badge">Part Design</span>
+      </div>
+      <div class="catia-card-body">
+        <button class="card-edit-btn" onclick="openCardEdit(this)" title="Edit title/category">âœ Edit</button>
+        <button class="card-delete-btn" onclick="deleteCard(this)" title="Delete card">ðŸ—‘ Delete</button>
+        <div class="card-edit-overlay">
+          <label>Title</label><input type="text" class="edit-title-input">
+          <label>Workbench</label>
+          <select class="edit-cat-select">
+            <option>Part Design</option><option>Assembly Design</option>
+            <option>Surface Design</option><option>Drafting</option>
+            <option>Sheet Metal</option><option>Kinematics</option>
+            <option>FEM Analysis</option><option>Other</option>
+          </select>
+          <label>Description</label><textarea class="edit-desc-input" rows="3"></textarea><label>Add Image via URL</label><input type="url" class="edit-img-url-input" placeholder="https://raw.githubusercontent.com/...">
+          <div class="card-edit-actions">
+            <button class="btn-sm btn-sm-primary" onclick="saveCardEdit(this)">Save</button>
+            <button class="btn-sm btn-sm-ghost" onclick="cancelCardEdit(this)">Cancel</button><button class="btn-sm btn-sm-ghost" style="color: var(--accent);">Load Image URL</button><button class="btn-sm btn-sm-ghost" onclick="deleteImage(this)" style="color: #ef4444;">Delete Image</button><button class="btn-sm btn-sm-ghost" onclick="deleteCard(this)" style="color: #ef4444;">Delete</button>
+          </div>
+        </div>
+        <div class="catia-card-title">Engine Cylinder</div>
+        <p class="catia-card-desc">a core structural component that houses the piston and withstands the intense pressure of combustion.The horizontal fins are critical for air-cooled engines.</p>
+      </div></div><div class="catia-card reveal visible" data-cat="Part Design" data-id="114">
+      <div class="catia-img-wrap">
+        <img alt="Engine Valve" src="./Naga_Siva_Kumar_Boga_Portfolio_FIXED_files/Naga Siva Kumar Boga — Design &amp; Engineering.html" class="">
+        <div class="placeholder" style="display: flex;">
+          <div class="placeholder-icon">âš™</div>
+          <div class="placeholder-label">Engine Valve</div>
+          <button class="placeholder-upload-btn" onclick="triggerUpload(this)">Add Image</button>
+        </div>
+        <span class="cat-badge">Part Design</span>
+      </div>
+      <div class="catia-card-body">
+        <button class="card-edit-btn" onclick="openCardEdit(this)" title="Edit title/category">âœ Edit</button>
+        <button class="card-delete-btn" onclick="deleteCard(this)" title="Delete card">ðŸ—‘ Delete</button>
+        <div class="card-edit-overlay">
+          <label>Title</label><input type="text" class="edit-title-input">
+          <label>Workbench</label>
+          <select class="edit-cat-select">
+            <option>Part Design</option><option>Assembly Design</option>
+            <option>Surface Design</option><option>Drafting</option>
+            <option>Sheet Metal</option><option>Kinematics</option>
+            <option>FEM Analysis</option><option>Other</option>
+          </select>
+          <label>Description</label><textarea class="edit-desc-input" rows="3"></textarea><label>Add Image via URL</label><input type="url" class="edit-img-url-input" placeholder="https://raw.githubusercontent.com/...">
+          <div class="card-edit-actions">
+            <button class="btn-sm btn-sm-primary" onclick="saveCardEdit(this)">Save</button>
+            <button class="btn-sm btn-sm-ghost" onclick="cancelCardEdit(this)">Cancel</button><button class="btn-sm btn-sm-ghost" style="color: var(--accent);">Load Image URL</button><button class="btn-sm btn-sm-ghost" onclick="deleteImage(this)" style="color: #ef4444;">Delete Image</button><button class="btn-sm btn-sm-ghost" onclick="deleteCard(this)" style="color: #ef4444;">Delete</button>
+          </div>
+        </div>
+        <div class="catia-card-title">Engine Valve</div>
+        <p class="catia-card-desc">Radial Engine Valves serve as a prime example of High-Temperature Design and Complex Valvetrain Synchronization.</p>
+      </div></div><div class="catia-card reveal visible" data-cat="Part Design" data-id="115">
+      <div class="catia-img-wrap">
+        <img alt="Rocker Arm" src="./Naga_Siva_Kumar_Boga_Portfolio_FIXED_files/Naga Siva Kumar Boga — Design &amp; Engineering.html" class="">
+        <div class="placeholder" style="display: flex;">
+          <div class="placeholder-icon">âš™</div>
+          <div class="placeholder-label">Rocker Arm</div>
+          <button class="placeholder-upload-btn" onclick="triggerUpload(this)">Add Image</button>
+        </div>
+        <span class="cat-badge">Part Design</span>
+      </div>
+      <div class="catia-card-body">
+        <button class="card-edit-btn" onclick="openCardEdit(this)" title="Edit title/category">âœ Edit</button>
+        <button class="card-delete-btn" onclick="deleteCard(this)" title="Delete card">ðŸ—‘ Delete</button>
+        <div class="card-edit-overlay">
+          <label>Title</label><input type="text" class="edit-title-input">
+          <label>Workbench</label>
+          <select class="edit-cat-select">
+            <option>Part Design</option><option>Assembly Design</option>
+            <option>Surface Design</option><option>Drafting</option>
+            <option>Sheet Metal</option><option>Kinematics</option>
+            <option>FEM Analysis</option><option>Other</option>
+          </select>
+          <label>Description</label><textarea class="edit-desc-input" rows="3"></textarea><label>Add Image via URL</label><input type="url" class="edit-img-url-input" placeholder="https://raw.githubusercontent.com/...">
+          <div class="card-edit-actions">
+            <button class="btn-sm btn-sm-primary" onclick="saveCardEdit(this)">Save</button>
+            <button class="btn-sm btn-sm-ghost" onclick="cancelCardEdit(this)">Cancel</button><button class="btn-sm btn-sm-ghost" style="color: var(--accent);">Load Image URL</button><button class="btn-sm btn-sm-ghost" onclick="deleteImage(this)" style="color: #ef4444;">Delete Image</button><button class="btn-sm btn-sm-ghost" onclick="deleteCard(this)" style="color: #ef4444;">Delete</button>
+          </div>
+        </div>
+        <div class="catia-card-title">Rocker Arm</div>
+        <p class="catia-card-desc">a critical oscillating lever used in the valvetrain of an internal combustion engine. In a professional CAD or aerospace portfolio, this part is a fantastic example of Mechanical Advantage and Kinematic Linkage Design.</p>
+      </div></div><div class="catia-card reveal visible" data-cat="Part Design" data-id="116">
+      <div class="catia-img-wrap">
+        <img alt="Helical Compression Spring" src="./Naga_Siva_Kumar_Boga_Portfolio_FIXED_files/Naga Siva Kumar Boga — Design &amp; Engineering.html" class="loaded">
+        <div class="placeholder" style="display: none;">
+          <div class="placeholder-icon">âš™</div>
+          <div class="placeholder-label">Helical Compression Spring</div>
+          <button class="placeholder-upload-btn" onclick="triggerUpload(this)">Add Image</button>
+        </div>
+        <span class="cat-badge">Part Design</span>
+      </div>
+      <div class="catia-card-body">
+        <button class="card-edit-btn" onclick="openCardEdit(this)" title="Edit title/category">âœ Edit</button>
+        <button class="card-delete-btn" onclick="deleteCard(this)" title="Delete card">ðŸ—‘ Delete</button>
+        <div class="card-edit-overlay">
+          <label>Title</label><input type="text" class="edit-title-input">
+          <label>Workbench</label>
+          <select class="edit-cat-select">
+            <option>Part Design</option><option>Assembly Design</option>
+            <option>Surface Design</option><option>Drafting</option>
+            <option>Sheet Metal</option><option>Kinematics</option>
+            <option>FEM Analysis</option><option>Other</option>
+          </select>
+          <label>Description</label><textarea class="edit-desc-input" rows="3"></textarea><label>Add Image via URL</label><input type="url" class="edit-img-url-input" placeholder="https://raw.githubusercontent.com/...">
+          <div class="card-edit-actions">
+            <button class="btn-sm btn-sm-primary" onclick="saveCardEdit(this)">Save</button>
+            <button class="btn-sm btn-sm-ghost" onclick="cancelCardEdit(this)">Cancel</button><button class="btn-sm btn-sm-ghost" style="color: var(--accent);">Load Image URL</button><button class="btn-sm btn-sm-ghost" onclick="deleteImage(this)" style="color: #ef4444;">Delete Image</button><button class="btn-sm btn-sm-ghost" onclick="deleteCard(this)" style="color: #ef4444;">Delete</button>
+          </div>
+        </div>
+        <div class="catia-card-title">Helical Compression Spring</div>
+        <p class="catia-card-desc">The spring's primary job is to snap the Intake and Exhaust Valves closed the instant the rocker arm releases them</p>
+      </div></div><div class="catia-card reveal visible" data-cat="Part Design" data-id="117">
+      <div class="catia-img-wrap">
+        <img alt="Rocker Bracket" src="./Naga_Siva_Kumar_Boga_Portfolio_FIXED_files/Naga Siva Kumar Boga — Design &amp; Engineering.html" class="loaded">
+        <div class="placeholder" style="display: none;">
+          <div class="placeholder-icon">âš™</div>
+          <div class="placeholder-label">Rocker Bracket</div>
+          <button class="placeholder-upload-btn" onclick="triggerUpload(this)">Add Image</button>
+        </div>
+        <span class="cat-badge">Part Design</span>
+      </div>
+      <div class="catia-card-body">
+        <button class="card-edit-btn" onclick="openCardEdit(this)" title="Edit title/category">âœ Edit</button>
+        <button class="card-delete-btn" onclick="deleteCard(this)" title="Delete card">ðŸ—‘ Delete</button>
+        <div class="card-edit-overlay">
+          <label>Title</label><input type="text" class="edit-title-input">
+          <label>Workbench</label>
+          <select class="edit-cat-select">
+            <option>Part Design</option><option>Assembly Design</option>
+            <option>Surface Design</option><option>Drafting</option>
+            <option>Sheet Metal</option><option>Kinematics</option>
+            <option>FEM Analysis</option><option>Other</option>
+          </select>
+          <label>Description</label><textarea class="edit-desc-input" rows="3"></textarea><label>Add Image via URL</label><input type="url" class="edit-img-url-input" placeholder="https://raw.githubusercontent.com/...">
+          <div class="card-edit-actions">
+            <button class="btn-sm btn-sm-primary" onclick="saveCardEdit(this)">Save</button>
+            <button class="btn-sm btn-sm-ghost" onclick="cancelCardEdit(this)">Cancel</button><button class="btn-sm btn-sm-ghost" style="color: var(--accent);">Load Image URL</button><button class="btn-sm btn-sm-ghost" onclick="deleteImage(this)" style="color: #ef4444;">Delete Image</button><button class="btn-sm btn-sm-ghost" onclick="deleteCard(this)" style="color: #ef4444;">Delete</button>
+          </div>
+        </div>
+        <div class="catia-card-title">Rocker Bracket</div>
+        <p class="catia-card-desc">A foundational mechanical component designed to provide a stable pivot point for rocker arms within an engine's valvetrain.</p>
+      </div></div><div class="catia-card reveal visible" data-cat="Part Design" data-id="118">
+      <div class="catia-img-wrap">
+        <img alt="Spark Plug" src="./Naga_Siva_Kumar_Boga_Portfolio_FIXED_files/Naga Siva Kumar Boga — Design &amp; Engineering.html" class="loaded">
+        <div class="placeholder" style="display: none;">
+          <div class="placeholder-icon">âš™</div>
+          <div class="placeholder-label">Spark Plug</div>
+          <button class="placeholder-upload-btn" onclick="triggerUpload(this)">Add Image</button>
+        </div>
+        <span class="cat-badge">Part Design</span>
+      </div>
+      <div class="catia-card-body">
+        <button class="card-edit-btn" onclick="openCardEdit(this)" title="Edit title/category">âœ Edit</button>
+        <button class="card-delete-btn" onclick="deleteCard(this)" title="Delete card">ðŸ—‘ Delete</button>
+        <div class="card-edit-overlay">
+          <label>Title</label><input type="text" class="edit-title-input">
+          <label>Workbench</label>
+          <select class="edit-cat-select">
+            <option>Part Design</option><option>Assembly Design</option>
+            <option>Surface Design</option><option>Drafting</option>
+            <option>Sheet Metal</option><option>Kinematics</option>
+            <option>FEM Analysis</option><option>Other</option>
+          </select>
+          <label>Description</label><textarea class="edit-desc-input" rows="3"></textarea><label>Add Image via URL</label><input type="url" class="edit-img-url-input" placeholder="https://raw.githubusercontent.com/...">
+          <div class="card-edit-actions">
+            <button class="btn-sm btn-sm-primary" onclick="saveCardEdit(this)">Save</button>
+            <button class="btn-sm btn-sm-ghost" onclick="cancelCardEdit(this)">Cancel</button><button class="btn-sm btn-sm-ghost" style="color: var(--accent);">Load Image URL</button><button class="btn-sm btn-sm-ghost" onclick="deleteImage(this)" style="color: #ef4444;">Delete Image</button><button class="btn-sm btn-sm-ghost" onclick="deleteCard(this)" style="color: #ef4444;">Delete</button>
+          </div>
+        </div>
+        <div class="catia-card-title">Spark Plug</div>
+        <p class="catia-card-desc">In real-time, the spark plug delivers a high-voltage pulse to ignite the fuel-air mixture in the cylinder head, creating the "power stroke."</p>
+      </div></div><div class="catia-card reveal visible" data-cat="Assembly Design" data-id="119">
+      <div class="catia-img-wrap">
+        <img alt="Cylinder Head Sub-Assembly" src="./Naga_Siva_Kumar_Boga_Portfolio_FIXED_files/Naga Siva Kumar Boga — Design &amp; Engineering.html" class="loaded">
+        <div class="placeholder" style="display: none;">
+          <div class="placeholder-icon">âš™</div>
+          <div class="placeholder-label">Cylinder Head Sub-Assembly</div>
+          <button class="placeholder-upload-btn" onclick="triggerUpload(this)">Add Image</button>
+        </div>
+        <span class="cat-badge">Assembly Design</span>
+      </div>
+      <div class="catia-card-body">
+        <button class="card-edit-btn" onclick="openCardEdit(this)" title="Edit title/category">âœ Edit</button>
+        <button class="card-delete-btn" onclick="deleteCard(this)" title="Delete card">ðŸ—‘ Delete</button>
+        <div class="card-edit-overlay">
+          <label>Title</label><input type="text" class="edit-title-input">
+          <label>Workbench</label>
+          <select class="edit-cat-select">
+            <option>Part Design</option><option>Assembly Design</option>
+            <option>Surface Design</option><option>Drafting</option>
+            <option>Sheet Metal</option><option>Kinematics</option>
+            <option>FEM Analysis</option><option>Other</option>
+          </select>
+          <label>Description</label><textarea class="edit-desc-input" rows="3"></textarea><label>Add Image via URL</label><input type="url" class="edit-img-url-input" placeholder="https://raw.githubusercontent.com/...">
+          <div class="card-edit-actions">
+            <button class="btn-sm btn-sm-primary" onclick="saveCardEdit(this)">Save</button>
+            <button class="btn-sm btn-sm-ghost" onclick="cancelCardEdit(this)">Cancel</button><button class="btn-sm btn-sm-ghost" style="color: var(--accent);">Load Image URL</button><button class="btn-sm btn-sm-ghost" onclick="deleteImage(this)" style="color: #ef4444;">Delete Image</button><button class="btn-sm btn-sm-ghost" onclick="deleteCard(this)" style="color: #ef4444;">Delete</button>
+          </div>
+        </div>
+        <div class="catia-card-title">Cylinder Head Sub-Assembly</div>
+        <p class="catia-card-desc">This assembly represents the Cylinder Head Sub-Assembly for your 5-cylinder radial engine.This is a crucial bridge between single-part modeling and the full engine assembly.</p>
+      </div></div><div class="catia-card reveal visible" data-cat="Part Design" data-id="120">
+      <div class="catia-img-wrap">
+        <img alt="Crankcase" src="./Naga_Siva_Kumar_Boga_Portfolio_FIXED_files/Naga Siva Kumar Boga — Design &amp; Engineering.html" class="loaded">
+        <div class="placeholder" style="display: none;">
+          <div class="placeholder-icon">âš™</div>
+          <div class="placeholder-label">Crankcase</div>
+          <button class="placeholder-upload-btn" onclick="triggerUpload(this)">Add Image</button>
+        </div>
+        <span class="cat-badge">Part Design</span>
+      </div>
+      <div class="catia-card-body">
+        <button class="card-edit-btn" onclick="openCardEdit(this)" title="Edit title/category">âœ Edit</button>
+        <button class="card-delete-btn" onclick="deleteCard(this)" title="Delete card">ðŸ—‘ Delete</button>
+        <div class="card-edit-overlay">
+          <label>Title</label><input type="text" class="edit-title-input">
+          <label>Workbench</label>
+          <select class="edit-cat-select">
+            <option>Part Design</option><option>Assembly Design</option>
+            <option>Surface Design</option><option>Drafting</option>
+            <option>Sheet Metal</option><option>Kinematics</option>
+            <option>FEM Analysis</option><option>Other</option>
+          </select>
+          <label>Description</label><textarea class="edit-desc-input" rows="3"></textarea><label>Add Image via URL</label><input type="url" class="edit-img-url-input" placeholder="https://raw.githubusercontent.com/...">
+          <div class="card-edit-actions">
+            <button class="btn-sm btn-sm-primary" onclick="saveCardEdit(this)">Save</button>
+            <button class="btn-sm btn-sm-ghost" onclick="cancelCardEdit(this)">Cancel</button><button class="btn-sm btn-sm-ghost" style="color: var(--accent);">Load Image URL</button><button class="btn-sm btn-sm-ghost" onclick="deleteImage(this)" style="color: #ef4444;">Delete Image</button><button class="btn-sm btn-sm-ghost" onclick="deleteCard(this)" style="color: #ef4444;">Delete</button>
+          </div>
+        </div>
+        <div class="catia-card-title">Crankcase</div>
+        <p class="catia-card-desc">The crankcase must absorb the combined reciprocating forces of all five pistons. Engineers use these 3D models for FEA (Finite Element Analysis) to ensure the walls are thick enough to resist cracking under high-torque loads.</p>
+      </div></div><div class="catia-card reveal visible" data-cat="Part Design" data-id="121">
+      <div class="catia-img-wrap">
+        <img alt="Cam Drive Gear" src="./Naga_Siva_Kumar_Boga_Portfolio_FIXED_files/Naga Siva Kumar Boga — Design &amp; Engineering.html" class="loaded">
+        <div class="placeholder" style="display: none;">
+          <div class="placeholder-icon">âš™</div>
+          <div class="placeholder-label">Cam Drive Gear</div>
+          <button class="placeholder-upload-btn" onclick="triggerUpload(this)">Add Image</button>
+        </div>
+        <span class="cat-badge">Part Design</span>
+      </div>
+      <div class="catia-card-body">
+        <button class="card-edit-btn" onclick="openCardEdit(this)" title="Edit title/category">âœ Edit</button>
+        <button class="card-delete-btn" onclick="deleteCard(this)" title="Delete card">ðŸ—‘ Delete</button>
+        <div class="card-edit-overlay">
+          <label>Title</label><input type="text" class="edit-title-input">
+          <label>Workbench</label>
+          <select class="edit-cat-select">
+            <option>Part Design</option><option>Assembly Design</option>
+            <option>Surface Design</option><option>Drafting</option>
+            <option>Sheet Metal</option><option>Kinematics</option>
+            <option>FEM Analysis</option><option>Other</option>
+          </select>
+          <label>Description</label><textarea class="edit-desc-input" rows="3"></textarea><label>Add Image via URL</label><input type="url" class="edit-img-url-input" placeholder="https://raw.githubusercontent.com/...">
+          <div class="card-edit-actions">
+            <button class="btn-sm btn-sm-primary" onclick="saveCardEdit(this)">Save</button>
+            <button class="btn-sm btn-sm-ghost" onclick="cancelCardEdit(this)">Cancel</button><button class="btn-sm btn-sm-ghost" style="color: var(--accent);">Load Image URL</button><button class="btn-sm btn-sm-ghost" onclick="deleteImage(this)" style="color: #ef4444;">Delete Image</button><button class="btn-sm btn-sm-ghost" onclick="deleteCard(this)" style="color: #ef4444;">Delete</button>
+          </div>
+        </div>
+        <div class="catia-card-title">Cam Drive Gear</div>
+        <p class="catia-card-desc">In a engine, this gear is mounted directly on the crankshaft and is responsible for driving the large cam ring that times the intake and exhaust valves for all five cylinders.</p>
+      </div></div><div class="catia-card reveal visible" data-cat="Part Design" data-id="122">
+      <div class="catia-img-wrap">
+        <img alt="Intermediate Gear" src="./Naga_Siva_Kumar_Boga_Portfolio_FIXED_files/Naga Siva Kumar Boga — Design &amp; Engineering.html" class="loaded">
+        <div class="placeholder" style="display: none;">
+          <div class="placeholder-icon">âš™</div>
+          <div class="placeholder-label">Intermediate Gear</div>
+          <button class="placeholder-upload-btn" onclick="triggerUpload(this)">Add Image</button>
+        </div>
+        <span class="cat-badge">Part Design</span>
+      </div>
+      <div class="catia-card-body">
+        <button class="card-edit-btn" onclick="openCardEdit(this)" title="Edit title/category">âœ Edit</button>
+        <button class="card-delete-btn" onclick="deleteCard(this)" title="Delete card">ðŸ—‘ Delete</button>
+        <div class="card-edit-overlay">
+          <label>Title</label><input type="text" class="edit-title-input">
+          <label>Workbench</label>
+          <select class="edit-cat-select">
+            <option>Part Design</option><option>Assembly Design</option>
+            <option>Surface Design</option><option>Drafting</option>
+            <option>Sheet Metal</option><option>Kinematics</option>
+            <option>FEM Analysis</option><option>Other</option>
+          </select>
+          <label>Description</label><textarea class="edit-desc-input" rows="3"></textarea><label>Add Image via URL</label><input type="url" class="edit-img-url-input" placeholder="https://raw.githubusercontent.com/...">
+          <div class="card-edit-actions">
+            <button class="btn-sm btn-sm-primary" onclick="saveCardEdit(this)">Save</button>
+            <button class="btn-sm btn-sm-ghost" onclick="cancelCardEdit(this)">Cancel</button><button class="btn-sm btn-sm-ghost" style="color: var(--accent);">Load Image URL</button><button class="btn-sm btn-sm-ghost" onclick="deleteImage(this)" style="color: #ef4444;">Delete Image</button><button class="btn-sm btn-sm-ghost" onclick="deleteCard(this)" style="color: #ef4444;">Delete</button>
+          </div>
+        </div>
+        <div class="catia-card-title">Intermediate Gear</div>
+        <p class="catia-card-desc">In engine, this gear likely sits between the crankshaft and the cam ring. Discussing this proves you understand planetary or reduction drive systems necessary for proper valve timing.</p>
+      </div></div><div class="catia-card reveal visible" data-cat="Part Design" data-id="123">
+      <div class="catia-img-wrap">
+        <img alt="Internal Gear" src="./Naga_Siva_Kumar_Boga_Portfolio_FIXED_files/Naga Siva Kumar Boga — Design &amp; Engineering.html" class="loaded">
+        <div class="placeholder" style="display: none;">
+          <div class="placeholder-icon">âš™</div>
+          <div class="placeholder-label">Internal Gear</div>
+          <button class="placeholder-upload-btn" onclick="triggerUpload(this)">Add Image</button>
+        </div>
+        <span class="cat-badge">Part Design</span>
+      </div>
+      <div class="catia-card-body">
+        <button class="card-edit-btn" onclick="openCardEdit(this)" title="Edit title/category">âœ Edit</button>
+        <button class="card-delete-btn" onclick="deleteCard(this)" title="Delete card">ðŸ—‘ Delete</button>
+        <div class="card-edit-overlay">
+          <label>Title</label><input type="text" class="edit-title-input">
+          <label>Workbench</label>
+          <select class="edit-cat-select">
+            <option>Part Design</option><option>Assembly Design</option>
+            <option>Surface Design</option><option>Drafting</option>
+            <option>Sheet Metal</option><option>Kinematics</option>
+            <option>FEM Analysis</option><option>Other</option>
+          </select>
+          <label>Description</label><textarea class="edit-desc-input" rows="3"></textarea><label>Add Image via URL</label><input type="url" class="edit-img-url-input" placeholder="https://raw.githubusercontent.com/...">
+          <div class="card-edit-actions">
+            <button class="btn-sm btn-sm-primary" onclick="saveCardEdit(this)">Save</button>
+            <button class="btn-sm btn-sm-ghost" onclick="cancelCardEdit(this)">Cancel</button><button class="btn-sm btn-sm-ghost" style="color: var(--accent);">Load Image URL</button><button class="btn-sm btn-sm-ghost" onclick="deleteImage(this)" style="color: #ef4444;">Delete Image</button><button class="btn-sm btn-sm-ghost" onclick="deleteCard(this)" style="color: #ef4444;">Delete</button>
+          </div>
+        </div>
+        <div class="catia-card-title">Internal Gear</div>
+        <p class="catia-card-desc">In a 5-cylinder radial engine, the number of teeth on this ring is critical. It must achieve a specific Reduction Ratio to ensure the valves open and close at the exact moment the piston is in the correct position.</p>
+      </div></div><div class="catia-card reveal visible" data-cat="Part Design" data-id="124">
+      <div class="catia-img-wrap">
+        <img alt="Intermediate Gear Shaft" src="./Naga_Siva_Kumar_Boga_Portfolio_FIXED_files/Naga Siva Kumar Boga — Design &amp; Engineering.html" class="loaded">
+        <div class="placeholder" style="display: none;">
+          <div class="placeholder-icon">âš™</div>
+          <div class="placeholder-label">Intermediate Gear Shaft</div>
+          <button class="placeholder-upload-btn" onclick="triggerUpload(this)">Add Image</button>
+        </div>
+        <span class="cat-badge">Part Design</span>
+      </div>
+      <div class="catia-card-body">
+        <button class="card-edit-btn" onclick="openCardEdit(this)" title="Edit title/category">âœ Edit</button>
+        <button class="card-delete-btn" onclick="deleteCard(this)" title="Delete card">ðŸ—‘ Delete</button>
+        <div class="card-edit-overlay">
+          <label>Title</label><input type="text" class="edit-title-input">
+          <label>Workbench</label>
+          <select class="edit-cat-select">
+            <option>Part Design</option><option>Assembly Design</option>
+            <option>Surface Design</option><option>Drafting</option>
+            <option>Sheet Metal</option><option>Kinematics</option>
+            <option>FEM Analysis</option><option>Other</option>
+          </select>
+          <label>Description</label><textarea class="edit-desc-input" rows="3"></textarea><label>Add Image via URL</label><input type="url" class="edit-img-url-input" placeholder="https://raw.githubusercontent.com/...">
+          <div class="card-edit-actions">
+            <button class="btn-sm btn-sm-primary" onclick="saveCardEdit(this)">Save</button>
+            <button class="btn-sm btn-sm-ghost" onclick="cancelCardEdit(this)">Cancel</button><button class="btn-sm btn-sm-ghost" style="color: var(--accent);">Load Image URL</button><button class="btn-sm btn-sm-ghost" onclick="deleteImage(this)" style="color: #ef4444;">Delete Image</button><button class="btn-sm btn-sm-ghost" onclick="deleteCard(this)" style="color: #ef4444;">Delete</button>
+          </div>
+        </div>
+        <div class="catia-card-title">Intermediate Gear Shaft</div>
+        <p class="catia-card-desc">This shaft is bolted to the Crankcase and provides a fixed axis for the Intermediate Gears to rotate. It is the physical link that allows the crankshaft to drive the large cam ring.</p>
+      </div></div><div class="catia-card reveal visible" data-cat="Part Design" data-id="125">
+      <div class="catia-img-wrap">
+        <img alt="Spacing Housing" src="./Naga_Siva_Kumar_Boga_Portfolio_FIXED_files/Naga Siva Kumar Boga — Design &amp; Engineering.html" class="loaded">
+        <div class="placeholder" style="display: none;">
+          <div class="placeholder-icon">âš™</div>
+          <div class="placeholder-label">Spacing Housing</div>
+          <button class="placeholder-upload-btn" onclick="triggerUpload(this)">Add Image</button>
+        </div>
+        <span class="cat-badge">Part Design</span>
+      </div>
+      <div class="catia-card-body">
+        <button class="card-edit-btn" onclick="openCardEdit(this)" title="Edit title/category">âœ Edit</button>
+        <button class="card-delete-btn" onclick="deleteCard(this)" title="Delete card">ðŸ—‘ Delete</button>
+        <div class="card-edit-overlay">
+          <label>Title</label><input type="text" class="edit-title-input">
+          <label>Workbench</label>
+          <select class="edit-cat-select">
+            <option>Part Design</option><option>Assembly Design</option>
+            <option>Surface Design</option><option>Drafting</option>
+            <option>Sheet Metal</option><option>Kinematics</option>
+            <option>FEM Analysis</option><option>Other</option>
+          </select>
+          <label>Description</label><textarea class="edit-desc-input" rows="3"></textarea><label>Add Image via URL</label><input type="url" class="edit-img-url-input" placeholder="https://raw.githubusercontent.com/...">
+          <div class="card-edit-actions">
+            <button class="btn-sm btn-sm-primary" onclick="saveCardEdit(this)">Save</button>
+            <button class="btn-sm btn-sm-ghost" onclick="cancelCardEdit(this)">Cancel</button><button class="btn-sm btn-sm-ghost" style="color: var(--accent);">Load Image URL</button><button class="btn-sm btn-sm-ghost" onclick="deleteImage(this)" style="color: #ef4444;">Delete Image</button><button class="btn-sm btn-sm-ghost" onclick="deleteCard(this)" style="color: #ef4444;">Delete</button>
+          </div>
+        </div>
+        <div class="catia-card-title">Spacing Housing</div>
+        <p class="catia-card-desc">a precision mechanical component designed to maintain exact axial distances between parts on a shaft.</p>
+      </div></div><div class="catia-card reveal visible" data-cat="Part Design" data-id="126">
+      <div class="catia-img-wrap">
+        <img alt="Gear Train Sub-Assembly" src="./Naga_Siva_Kumar_Boga_Portfolio_FIXED_files/Naga Siva Kumar Boga — Design &amp; Engineering.html" class="loaded">
+        <div class="placeholder" style="display: none;">
+          <div class="placeholder-icon">âš™</div>
+          <div class="placeholder-label">Gear Train Sub-Assembly</div>
+          <button class="placeholder-upload-btn" onclick="triggerUpload(this)">Add Image</button>
+        </div>
+        <span class="cat-badge">Part Design</span>
+      </div>
+      <div class="catia-card-body">
+        <button class="card-edit-btn" onclick="openCardEdit(this)" title="Edit title/category">âœ Edit</button>
+        <button class="card-delete-btn" onclick="deleteCard(this)" title="Delete card">ðŸ—‘ Delete</button>
+        <div class="card-edit-overlay">
+          <label>Title</label><input type="text" class="edit-title-input">
+          <label>Workbench</label>
+          <select class="edit-cat-select">
+            <option>Part Design</option><option>Assembly Design</option>
+            <option>Surface Design</option><option>Drafting</option>
+            <option>Sheet Metal</option><option>Kinematics</option>
+            <option>FEM Analysis</option><option>Other</option>
+          </select>
+          <label>Description</label><textarea class="edit-desc-input" rows="3"></textarea><label>Add Image via URL</label><input type="url" class="edit-img-url-input" placeholder="https://raw.githubusercontent.com/...">
+          <div class="card-edit-actions">
+            <button class="btn-sm btn-sm-primary" onclick="saveCardEdit(this)">Save</button>
+            <button class="btn-sm btn-sm-ghost" onclick="cancelCardEdit(this)">Cancel</button><button class="btn-sm btn-sm-ghost" style="color: var(--accent);">Load Image URL</button><button class="btn-sm btn-sm-ghost" onclick="deleteImage(this)" style="color: #ef4444;">Delete Image</button><button class="btn-sm btn-sm-ghost" onclick="deleteCard(this)" style="color: #ef4444;">Delete</button>
+          </div>
+        </div>
+        <div class="catia-card-title">Gear Train Sub-Assembly</div>
+        <p class="catia-card-desc">The gear train (Central Gear, Intermediate Gear, and Internal Cam Ring) is engineered to a specific Reduction Ratio (typically for a 5-cylinder engine). Engineers use this model to ensure that as the crankshaft rotates, the cam ring turns at exactly the right speed to open the intake and exhaust valves at the precise millisecond of the piston stroke.</p>
+      </div></div><div class="catia-card reveal visible" data-cat="Part Design" data-id="127">
+      <div class="catia-img-wrap">
+        <img alt="Cam Housing" src="./Naga_Siva_Kumar_Boga_Portfolio_FIXED_files/Naga Siva Kumar Boga — Design &amp; Engineering.html" class="loaded">
+        <div class="placeholder" style="display: none;">
+          <div class="placeholder-icon">âš™</div>
+          <div class="placeholder-label">Cam Housing</div>
+          <button class="placeholder-upload-btn" onclick="triggerUpload(this)">Add Image</button>
+        </div>
+        <span class="cat-badge">Part Design</span>
+      </div>
+      <div class="catia-card-body">
+        <button class="card-edit-btn" onclick="openCardEdit(this)" title="Edit title/category">âœ Edit</button>
+        <button class="card-delete-btn" onclick="deleteCard(this)" title="Delete card">ðŸ—‘ Delete</button>
+        <div class="card-edit-overlay">
+          <label>Title</label><input type="text" class="edit-title-input">
+          <label>Workbench</label>
+          <select class="edit-cat-select">
+            <option>Part Design</option><option>Assembly Design</option>
+            <option>Surface Design</option><option>Drafting</option>
+            <option>Sheet Metal</option><option>Kinematics</option>
+            <option>FEM Analysis</option><option>Other</option>
+          </select>
+          <label>Description</label><textarea class="edit-desc-input" rows="3"></textarea><label>Add Image via URL</label><input type="url" class="edit-img-url-input" placeholder="https://raw.githubusercontent.com/...">
+          <div class="card-edit-actions">
+            <button class="btn-sm btn-sm-primary" onclick="saveCardEdit(this)">Save</button>
+            <button class="btn-sm btn-sm-ghost" onclick="cancelCardEdit(this)">Cancel</button><button class="btn-sm btn-sm-ghost" style="color: var(--accent);">Load Image URL</button><button class="btn-sm btn-sm-ghost" onclick="deleteImage(this)" style="color: #ef4444;">Delete Image</button><button class="btn-sm btn-sm-ghost" onclick="deleteCard(this)" style="color: #ef4444;">Delete</button>
+          </div>
+        </div>
+        <div class="catia-card-title">Cam Housing</div>
+        <p class="catia-card-desc">It provides the fixed mounting points for the Pushrods and Lifters. In real-time, it ensures these components stay perfectly aligned as they transfer motion from the internal cam ring to the cylinder heads.</p>
+      </div></div><div class="catia-card reveal visible" data-cat="Other" data-id="108">
+      <div class="catia-img-wrap">
+        <img alt="Naga Siva Kumar Boga â€” Design &amp; Engineering(1)" src="./Naga_Siva_Kumar_Boga_Portfolio_FIXED_files/Naga Siva Kumar Boga — Design &amp; Engineering.html" class="">
+        <div class="placeholder" style="display: flex;">
+          <div class="placeholder-icon">ðŸ’¼</div>
+          <div class="placeholder-label">Naga Siva Kumar Boga â€” Design &amp; Engineering(1)</div>
+          <button class="placeholder-upload-btn" onclick="triggerUpload(this)">Add Image</button>
+        </div>
+        <span class="cat-badge">Other</span>
+      </div>
+      <div class="catia-card-body">
+        <button class="card-edit-btn" onclick="openCardEdit(this)" title="Edit title/category">âœ Edit</button>
+        <button class="card-delete-btn" onclick="deleteCard(this)" title="Delete card">ðŸ—‘ Delete</button>
+        <div class="card-edit-overlay">
+          <label>Title</label><input type="text" class="edit-title-input">
+          <label>Workbench</label>
+          <select class="edit-cat-select">
+            <option>Part Design</option><option>Assembly Design</option>
+            <option>Surface Design</option><option>Drafting</option>
+            <option>Sheet Metal</option><option>Kinematics</option>
+            <option>FEM Analysis</option><option>Other</option>
+          </select>
+          <label>Description</label><textarea class="edit-desc-input" rows="3"></textarea>
+          <label>Add Image via URL</label><input type="url" class="edit-img-url-input" placeholder="https://raw.githubusercontent.com/...">
+          <div class="card-edit-actions">
+            <button class="btn-sm btn-sm-primary" onclick="saveCardEdit(this)">Save</button>
+            <button class="btn-sm btn-sm-ghost" onclick="cancelCardEdit(this)">Cancel</button>
+            <button class="btn-sm btn-sm-ghost" onclick="loadImageFromUrl(this)" style="color: var(--accent);">Load Image URL</button>
+            <button class="btn-sm btn-sm-ghost" onclick="deleteImage(this)" style="color: #ef4444;">Delete Image</button>
+            <button class="btn-sm btn-sm-ghost" onclick="deleteCard(this)" style="color: #ef4444;">Delete</button>
+          </div>
+        </div>
+        <div class="catia-card-title">Naga Siva Kumar Boga â€” Design &amp; Engineering(1)</div>
+        <p class="catia-card-desc">Interactive portfolio website showcasing mechanical engineering projects, CAD designs, and technical skills. Built with modern web technologies including HTML5, CSS3, and JavaScript for responsive design and user interaction.</p>
+      </div></div></div><!-- /catia-grid -->
+  </div><!-- /inner -->
+</div><!-- /#catia -->
+
+<!-- EDUCATION -->
+<section id="about">
+  <div class="section-header reveal visible">
+    <span class="section-num">05 /</span>
+    <h2 class="section-title">Education</h2>
+    <div class="section-line"></div>
+  </div>
+  <div class="edu-grid">
+    <div class="edu-card reveal visible">
+      <div class="edu-degree">B.Tech â€” Mechanical Engineering</div>
+      <div class="edu-school">SR Gudlavalleru Engineering College</div>
+      <div class="edu-meta">
+        <span class="edu-score">CGPA 8.2</span>
+        <span class="edu-year">Aug 2022 â€“ May 2025</span>
+      </div>
+    </div>
+    <div class="edu-card reveal visible">
+      <div class="edu-degree">Diploma â€” Mechanical Engineering</div>
+      <div class="edu-school">A.A.N.M &amp; V.V.R.S.R Polytechnic, Gudlavalleru</div>
+      <div class="edu-meta">
+        <span class="edu-score">84%</span>
+        <span class="edu-year">Aug 2019 â€“ Apr 2022</span>
+      </div>
+    </div>
+    <div class="edu-card reveal visible">
+      <div class="edu-degree">Secondary School (SSC)</div>
+      <div class="edu-school">B.G.K.Z.P. High School, Pedana</div>
+      <div class="edu-meta">
+        <span class="edu-score">CGPA 9.0</span>
+        <span class="edu-year">Jun 2018 â€“ May 2019</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<div id="contact">
+  <div class="inner">
+    <div class="section-header reveal visible">
+      <span class="section-num">06 /</span>
+      <h2 class="section-title">Contact</h2>
+      <div class="section-line"></div>
+    </div>
+    <div class="contact-grid">
+      <div class="reveal visible">
+        <div class="availability-edit-area">
+          <div class="available-badge" id="availBadge" style="background: rgba(232, 197, 71, 0.1); border-color: rgba(232, 197, 71, 0.3); color: var(--accent);">
+            <span class="available-dot" id="availDot" style="background: rgb(74, 222, 128);"></span>
+            <span id="availText">Open to Opportunities</span>
+          </div>
+          <button class="avail-edit-btn" onclick="toggleAvailPanel()" title="Edit availability">âœ Edit</button>
+
+          <!-- Availability Edit Panel -->
+          <div class="avail-panel" id="availPanel">
+            <h5>âœ Edit Availability</h5>
+            <div class="avail-row">
+              <label>Status</label>
+              <div class="status-options">
+                <button class="status-opt" data-status="Available Immediately" onclick="selectStatus(this)">Available Now</button>
+                <button class="status-opt selected" data-status="Open to Opportunities" onclick="selectStatus(this)">Open to Offers</button>
+                <button class="status-opt" data-status="Notice Period â€” 1 Month" onclick="selectStatus(this)">1 Month Notice</button>
+                <button class="status-opt" data-status="Currently Employed" onclick="selectStatus(this)">Employed</button>
+                <button class="status-opt" data-status="Not Available" onclick="selectStatus(this)">Not Available</button>
+              </div>
+            </div>
+            <div class="avail-row">
+              <label>Custom Message (optional)</label>
+              <input type="text" id="availCustom" placeholder="e.g. Available from June 2025">
+            </div>
+            <div class="avail-row">
+              <label>Dot Color</label>
+              <select id="availColor">
+                <option value="#4ade80">Green â€” Available</option>
+                <option value="#e8c547">Yellow â€” Open to Offers</option>
+                <option value="#f97316">Orange â€” Notice Period</option>
+                <option value="#ef4444">Red â€” Not Available</option>
+              </select>
+            </div>
+            <div class="form-actions" style="margin-top:0.6rem">
+              <button class="btn-sm btn-sm-primary" onclick="saveAvailability()">Save</button>
+              <button class="btn-sm btn-sm-ghost" onclick="toggleAvailPanel()">Cancel</button>
+            </div>
+          </div>
+        </div>
+        <h2 class="contact-heading" style="margin-top:1.5rem">Let's<br><span>Work</span><br>Together</h2>
+        <p class="contact-text">
+          Open to Design Engineer, CAD Engineer, and Product Development roles. Also interested in Operations, Technical Support, and IT Administration opportunities. Ready to contribute from day one.
+        </p>
+      </div>
+      <div class="contact-links reveal visible">
+        <a href="tel:+916300213705" class="contact-link">
+          <span class="contact-link-icon">📧</span>
+          <span class="contact-link-label">Phone</span>
+          <span class="contact-link-value">+91 6300213705</span>
+        </a>
+        <a href="mailto:nagasivakumarboga@gmail.com" class="contact-link">
+         <span class="contact-link-icon">✉️</span>
+         <span class="contact-link-label">Email</span>
+         <span class="contact-link-value">nagasivakumarboga@gmail.com</span>
+        </a>
+        <a href="https://linkedin.com/in/naga-siva-boga-49b746319" target="_blank" class="contact-link">
+          <span class="contact-link-icon">🔗</span>
+          <span class="contact-link-label">LinkedIn</span>
+          <span class="contact-link-value">naga-siva-boga-49b746319</span>
+        </a>
+        <a href="file:///C:/Users/nagas/Desktop/Naga%20Siva%20Kumar%20Boga%20%E2%80%94%20Design%20&amp;%20Engineering.html#" class="contact-link">
+          <span class="contact-link-icon">📍</span>
+          <span class="contact-link-label">Location</span>
+          <span class="contact-link-value">Pedana, Vijayawada</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  Â© 2025 Naga Siva Kumar Boga &nbsp;Â·&nbsp; Mechanical Engineer &nbsp;Â·&nbsp; Pedana, Vijayawada
+</footer>
+
+<!-- Hidden file input for image upload -->
+<input type="file" id="fileInput" accept="image/*" style="display:none">
+
+<!-- Lightbox -->
+<div class="lb" id="lb">
+  <div class="lb-close" id="lb-close">CLOSE ✕</div>
+  <img id="lb-img" src="./Naga_Siva_Kumar_Boga_Portfolio_FIXED_files/Naga Siva Kumar Boga — Design &amp; Engineering.html" alt="" style="display: block;">
+  <div class="lb-no-img" id="lb-no-img" style="display: none;">No image added yet — click "Add Image" on the card.</div>
+  <div class="lb-title" id="lb-title">Front Radial Engine Crankshaft</div>
+</div>
+
+<script>
+  // â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+  // PERSISTENT STORAGE â€” Save & Restore from localStorage
+  // â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+  const STORAGE_KEY = 'catia_portfolio_data';
+  
+  function saveStateToStorage() {
+    const state = {
+      cards: [],
+      skills: {},
+      experience: {},
+      availability: {}
+    };
+    
+    // Save CATIA cards
+    document.querySelectorAll('.catia-card').forEach((card, idx) => {
+      const img = card.querySelector('img');
+      const cardData = {
+        id: card.dataset.id,
+        category: card.dataset.cat,
+        title: card.querySelector('.catia-card-title').textContent,
+        description: card.querySelector('.catia-card-desc').textContent,
+        image: img && img.src ? img.src : null
+      };
+      state.cards.push(cardData);
+    });
+    
+    // Save skills
+    const skillsTitle = document.querySelector('#skills .section-title');
+    if (skillsTitle) state.skills.title = skillsTitle.textContent;
+    const skillTags = document.querySelectorAll('#skills .tag');
+    state.skills.all = Array.from(skillTags).map(t => t.textContent);
+    
+    // Save experience
+    const expTitle = document.querySelector('#experience .section-title');
+    if (expTitle) state.experience.title = expTitle.textContent;
+    const items = document.querySelectorAll('#experience .timeline-item');
+    state.experience.items = Array.from(items).map(item => ({
+      company: item.querySelector('.timeline-company').textContent,
+      role: item.querySelector('.timeline-role').textContent,
+      duration: item.querySelector('.timeline-duration').textContent,
+      points: Array.from(item.querySelectorAll('.timeline-points li')).map(li => li.textContent)
+    }));
+    
+    // Save availability
+    const availBadge = document.getElementById('availBadge');
+    if (availBadge) {
+      state.availability.text = document.getElementById('availText').textContent;
+      state.availability.style = availBadge.style.cssText;
+    }
+    
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+    console.log('âœ“ Changes saved to local storage');
+  }
+  
+  function restoreStateFromStorage() {
+    const saved = localStorage.getItem(STORAGE_KEY);
+    if (!saved) return false;
+    
+    try {
+      const state = JSON.parse(saved);
+      
+      // Restore CATIA card images from Base64
+      if (state.cards && state.cards.length > 0) {
+        state.cards.forEach(cardData => {
+          const card = document.querySelector(`.catia-card[data-id="${cardData.id}"]`);
+          if (card && cardData.image) {
+            const img = card.querySelector('img');
+            const placeholder = card.querySelector('.placeholder');
+            if (img) {
+              img.src = cardData.image;
+              img.classList.add('loaded');
+              if (placeholder) placeholder.style.display = 'none';
+            }
+          }
+        });
+      }
+      
+      // Restore availability
+      if (state.availability && state.availability.text) {
+        document.getElementById('availText').textContent = state.availability.text;
+        const badge = document.getElementById('availBadge');
+        if (badge) badge.style.cssText = state.availability.style || '';
+      }
+      
+      console.log('âœ“ Restored from local storage');
+      return true;
+    } catch (e) {
+      console.error('Error restoring state:', e);
+      return false;
+    }
+  }
+
+  function isValidImageSrc(src) {
+    if (!src) return false;
+    if (src.startsWith('data:') || src.startsWith('blob:')) return true;
+    const lower = src.toLowerCase();
+    return /\.(png|jpe?g|gif|webp|svg|avif)(\?|#|$)/.test(lower);
+  }
+
+  function cleanInvalidCardImages() {
+    document.querySelectorAll('.catia-card img').forEach(img => {
+      const src = img.getAttribute('src') || '';
+      if (!isValidImageSrc(src)) {
+        img.src = '';
+        img.classList.remove('loaded');
+        const placeholder = img.closest('.catia-img-wrap')?.querySelector('.placeholder');
+        if (placeholder) placeholder.style.display = 'flex';
+      }
+      img.onerror = () => {
+        img.src = '';
+        img.classList.remove('loaded');
+        const placeholder = img.closest('.catia-img-wrap')?.querySelector('.placeholder');
+        if (placeholder) placeholder.style.display = 'flex';
+      };
+    });
+    const lbImg = document.getElementById('lb-img');
+    if (lbImg && !isValidImageSrc(lbImg.getAttribute('src') || '')) {
+      lbImg.src = '';
+      lbImg.style.display = 'none';
+    }
+  }
+
+  // â”€â”€ Scroll reveal â”€â”€
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.07 });
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  
+  // Restore state on page load
+  window.addEventListener('load', () => {
+    // Restore saved card images and data
+    restoreStateFromStorage();
+    
+    // Clean up invalid image paths and broken card images
+    cleanInvalidCardImages();
+  });
+
+  document.querySelectorAll('.filter-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const f = btn.dataset.f;
+      document.querySelectorAll('.catia-card').forEach(c => {
+        c.classList.toggle('hidden', f !== 'all' && c.dataset.cat !== f);
+      });
+      updateCatiaCount();
+      saveStateToStorage();
+    });
+  });
+
+  // â”€â”€ Image upload (existing cards) â”€â”€
+  let currentCard = null;
+  const fileInput = document.getElementById('fileInput');
+
+  function normalizeGithubImageUrl(url) {
+    try {
+      const parsed = new URL(url.trim());
+      if ((parsed.hostname === 'github.com' || parsed.hostname === 'www.github.com') && parsed.pathname.includes('/blob/')) {
+        return `https://raw.githubusercontent.com${parsed.pathname.replace('/blob/', '/')}${parsed.search}`;
+      }
+      return url.trim();
+    } catch (e) {
+      return url.trim();
+    }
+  }
+
+  function triggerUpload(btn) {
+    currentCard = btn.closest('.catia-card');
+    fileInput.click();
+  }
+
+  function triggerImageUrl(btn) {
+    const card = btn.closest('.catia-card');
+    const url = prompt('Paste a GitHub/raw image URL here:');
+    if (url && url.trim()) {
+      applyImage(card, normalizeGithubImageUrl(url));
+    }
+  }
+
+  fileInput.addEventListener('change', () => {
+    if (!fileInput.files[0] || !currentCard) return;
+    const url = URL.createObjectURL(fileInput.files[0]);
+    applyImage(currentCard, url);
+    fileInput.value = '';
+  });
+
+  function applyImage(card, url) {
+    const img = card.querySelector('img');
+    const placeholder = card.querySelector('.placeholder');
+    
+    if (!img) return;
+    
+    // Convert blob/file URLs to Base64 for permanent storage
+    if (url.startsWith('blob:')) {
+      fetch(url)
+        .then(res => res.blob())
+        .then(blob => {
+          const reader = new FileReader();
+          reader.onload = (e) => {
+            const base64Url = e.target.result;
+            img.src = base64Url;
+            img.classList.add('loaded');
+            if (placeholder) placeholder.style.display = 'none';
+            saveStateToStorage();
+            console.log('âœ“ Image converted to Base64 and saved');
+          };
+          reader.readAsDataURL(blob);
+        })
+        .catch(err => {
+          console.error('Error converting image:', err);
+          // Fallback: use blob URL directly
+          img.src = url;
+          img.classList.add('loaded');
+          if (placeholder) placeholder.style.display = 'none';
+        });
+    } else if (url.startsWith('data:')) {
+      // Already in Base64 format
+      img.src = url;
+      img.classList.add('loaded');
+      if (placeholder) placeholder.style.display = 'none';
+      saveStateToStorage();
+    } else {
+      // Regular URL
+      img.src = url;
+      img.classList.add('loaded');
+      if (placeholder) placeholder.style.display = 'none';
+      saveStateToStorage();
+    }
+  }
+
+  // â”€â”€ Drag & drop onto cards â”€â”€
+  function bindCardDragDrop(card) {
+    card.addEventListener('dragover', e => { e.preventDefault(); card.style.borderColor = 'var(--accent)'; });
+    card.addEventListener('dragleave', () => { card.style.borderColor = ''; });
+    card.addEventListener('drop', e => {
+      e.preventDefault();
+      card.style.borderColor = '';
+      const file = e.dataTransfer.files[0];
+      if (file && file.type.startsWith('image/')) {
+        applyImage(card, URL.createObjectURL(file));
+      }
+    });
+  }
+  document.querySelectorAll('.catia-card').forEach(bindCardDragDrop);
+
+  // â”€â”€ Lightbox â”€â”€
+  const lb = document.getElementById('lb');
+  const lbImg = document.getElementById('lb-img');
+  const lbNoImg = document.getElementById('lb-no-img');
+  const lbTitle = document.getElementById('lb-title');
+
+  function bindCardLightbox(c) {
+    c.addEventListener('click', (e) => {
+      if (e.target.classList.contains('placeholder-upload-btn')) return;
+      if (e.target.classList.contains('card-edit-btn')) return;
+      if (e.target.classList.contains('card-delete-btn')) return;
+      if (e.target.classList.contains('btn-sm')) return;
+      if (e.target.closest('.card-edit-overlay')) return;
+      const img = c.querySelector('img');
+      lbTitle.textContent = c.querySelector('.catia-card-title').textContent;
+      if (img && img.classList.contains('loaded')) {
+        lbImg.src = img.src;
+        lbImg.style.display = 'block';
+        lbNoImg.style.display = 'none';
+      } else {
+        lbImg.style.display = 'none';
+        lbNoImg.style.display = 'block';
+      }
+      lb.classList.add('open');
+    });
+  }
+  document.querySelectorAll('.catia-card').forEach(bindCardLightbox);
+
+  document.getElementById('lb-close').addEventListener('click', () => lb.classList.remove('open'));
+  lb.addEventListener('click', e => { if (e.target === lb) lb.classList.remove('open'); });
+
+  // â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+  // FEATURE 1 â€” ADD NEW CARD
+  // â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+  function toggleAddPanel() {
+    const panel = document.getElementById('addCardPanel');
+    panel.classList.toggle('open');
+    if (panel.classList.contains('open')) panel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  }
+
+  let cardCounter = 100;
+  function addNewCard() {
+    const title    = document.getElementById('newTitle').value.trim();
+    const cat      = document.getElementById('newCat').value;
+    const desc     = document.getElementById('newDesc').value.trim() || 'Add your description here.';
+    const imgFile  = document.getElementById('newImgInput').files[0];
+    const imgUrl   = document.getElementById('newImgUrl').value.trim();
+
+    if (!title) { alert('Please enter a card title.'); return; }
+    cardCounter++;
+
+    const icons = { 'Part Design':'★','Assembly Design':'⚙','Surface Design':'🖌','Drafting':'📐','Sheet Metal':'🔩','Kinematics':'◉','FEM Analysis':'📊','Other':'❖' };
+    const icon = icons[cat] || '❖';
+
+    const card = document.createElement('div');
+    card.className = 'catia-card reveal visible';
+    card.dataset.cat = cat;
+    card.dataset.id = cardCounter;
+    card.innerHTML = `
+      <div class="catia-img-wrap">
+        <img alt="${title}"/>
+        <div class="placeholder">
+          <div class="placeholder-icon">${icon}</div>
+          <div class="placeholder-label">${title}</div>
+          <button class="placeholder-upload-btn" onclick="triggerUpload(this)">Add Image</button>
+        </div>
+        <span class="cat-badge">${cat}</span>
+      </div>
+      <div class="catia-card-body">
+        <button class="card-edit-btn" onclick="openCardEdit(this)" title="Edit title/category">âœ Edit</button>
+        <button class="card-delete-btn" onclick="deleteCard(this)" title="Delete card">ðŸ—‘ Delete</button>
+        <div class="card-edit-overlay">
+          <label>Title</label><input type="text" class="edit-title-input" />
+          <label>Workbench</label>
+          <select class="edit-cat-select">
+            <option>Part Design</option><option>Assembly Design</option>
+            <option>Surface Design</option><option>Drafting</option>
+            <option>Sheet Metal</option><option>Kinematics</option>
+            <option>FEM Analysis</option><option>Other</option>
+          </select>
+          <label>Description</label><textarea class="edit-desc-input" rows="3"></textarea>
+          <label>Add Image via URL</label><input type="url" class="edit-img-url-input" placeholder="https://raw.githubusercontent.com/...">
+          <div class="card-edit-actions">
+            <button class="btn-sm btn-sm-primary" onclick="saveCardEdit(this)">Save</button>
+            <button class="btn-sm btn-sm-ghost" onclick="cancelCardEdit(this)">Cancel</button>
+            <button class="btn-sm btn-sm-ghost" onclick="loadImageFromUrl(this)" style="color: var(--accent);">Load Image URL</button>
+            <button class="btn-sm btn-sm-ghost" onclick="deleteImage(this)" style="color: #ef4444;">Delete Image</button><button class="btn-sm btn-sm-ghost" onclick="deleteCard(this)" style="color: #ef4444;">Delete</button>
+          </div>
+        </div>
+        <div class="catia-card-title">${title}</div>
+        <p class="catia-card-desc">${desc}</p>
+      </div>`;
+
+    document.getElementById('catiaGrid').appendChild(card);
+    if (imgFile) {
+      applyImage(card, URL.createObjectURL(imgFile));
+    } else if (imgUrl) {
+      applyImage(card, normalizeGithubImageUrl(imgUrl));
+    }
+    bindCardDragDrop(card);
+    bindCardLightbox(card);
+
+    document.getElementById('newTitle').value = '';
+    document.getElementById('newDesc').value = '';
+    document.getElementById('newImgInput').value = '';
+    document.getElementById('newImgUrl').value = '';
+    toggleAddPanel();
+
+    const activeF = document.querySelector('.filter-btn.active');
+    if (activeF && activeF.dataset.f !== 'all' && activeF.dataset.f !== cat) card.classList.add('hidden');
+    updateCatiaCount();
+    
+    // Save to localStorage
+    saveStateToStorage();
+  }
+
+  // â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+  // FEATURE 2 â€” CARD TITLE / CATEGORY EDIT
+  // â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+  function openCardEdit(btn) {
+    const body    = btn.closest('.catia-card-body');
+    const card    = btn.closest('.catia-card');
+    const overlay = body.querySelector('.card-edit-overlay');
+    const titleIn = overlay.querySelector('.edit-title-input');
+    const catSel  = overlay.querySelector('.edit-cat-select');
+    const badge   = card.querySelector('.cat-badge');
+    const ph      = card.querySelector('.placeholder-label');
+    const img     = card.querySelector('img');
+    titleIn.value = body.querySelector('.catia-card-title').textContent;
+    catSel.value  = badge ? badge.textContent.trim() : 'Part Design';
+    const descIn = overlay.querySelector('.edit-desc-input');
+    descIn.value = body.querySelector('.catia-card-desc').textContent;
+    overlay.classList.add('open');
+    titleIn.focus();
+  }
+
+  function saveCardEdit(saveBtn) {
+    const overlay = saveBtn.closest('.card-edit-overlay');
+    const body    = saveBtn.closest('.catia-card-body');
+    const card    = saveBtn.closest('.catia-card');
+    const badge   = card.querySelector('.cat-badge');
+    const ph      = card.querySelector('.placeholder-label');
+    const img     = card.querySelector('img');
+    const newTitle = overlay.querySelector('.edit-title-input').value.trim();
+    const newCat   = overlay.querySelector('.edit-cat-select').value;
+    if (newTitle) { body.querySelector('.catia-card-title').textContent = newTitle; if (ph) ph.textContent = newTitle; if (img) img.alt = newTitle; }
+    if (newCat)   { if (badge) badge.textContent = newCat; card.dataset.cat = newCat; }
+    const newDesc = overlay.querySelector('.edit-desc-input').value.trim();
+    if (newDesc) body.querySelector('.catia-card-desc').textContent = newDesc;
+    overlay.classList.remove('open');
+    const activeF = document.querySelector('.filter-btn.active');
+    if (activeF && activeF.dataset.f !== 'all') card.classList.toggle('hidden', card.dataset.cat !== activeF.dataset.f);
+    updateCatiaCount();
+    
+    // Save to localStorage
+    saveStateToStorage();
+  }
+
+  function cancelCardEdit(btn) { btn.closest('.card-edit-overlay').classList.remove('open'); }
+
+  function loadImageFromUrl(btn) {
+    const overlay = btn.closest('.card-edit-overlay');
+    const card = overlay.closest('.catia-card');
+    const urlInput = overlay.querySelector('.edit-img-url-input');
+    const url = urlInput.value.trim();
+    if (!url) { alert('Please enter an image URL.'); return; }
+    applyImage(card, normalizeGithubImageUrl(url));
+    urlInput.value = '';
+  }
+
+  function deleteImage(btn) {
+    const card = btn.closest('.catia-card');
+    const img = card.querySelector('img');
+    const placeholder = card.querySelector('.placeholder');
+    if (img.src) {
+      if (img.src.startsWith('blob:')) URL.revokeObjectURL(img.src);
+      img.src = '';
+      img.classList.remove('loaded');
+      if (placeholder) placeholder.style.display = 'flex';
+      saveStateToStorage();
+    }
+  }
+
+  // â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+  // DELETE CARD
+  // â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+  function deleteCard(btn) {
+    if (confirm('Are you sure you want to delete this CATIA card?')) {
+      const card = btn.closest('.catia-card');
+      card.remove();
+      updateCatiaCount();
+      
+      // Save to localStorage
+      saveStateToStorage();
+    }
+  }
+
+  // â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+  // AUTO-UPDATE CATIA COUNT
+  // â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+  function updateCatiaCount() {
+    const total = document.querySelectorAll('.catia-card').length;
+    const visible = document.querySelectorAll('.catia-card:not(.hidden)').length;
+    document.getElementById('partsCount').textContent = visible;
+    document.getElementById('totalFiles').textContent = total;
+  }
+  updateCatiaCount();
+
+  // â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+  // EDIT SECTIONS â€” SKILLS & EXPERIENCE
+  // â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+  function toggleSectionEdit(section) {
+    if (section === 'experience') return toggleExperienceModal();
+    const panel = document.getElementById(section + 'EditPanel');
+    if (!panel) { console.error('Panel not found for section:', section); return; }
+    panel.classList.toggle('open');
+    if (panel.classList.contains('open')) {
+      panel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }
+  }
+
+  function toggleExperienceModal() {
+    const modal = document.getElementById('experienceModal');
+    if (!modal) return;
+    if (!modal.classList.contains('open')) {
+      // fill fields from current timeline
+      const sectionTitle = document.querySelector('#experience .section-title').textContent;
+      if (sectionTitle) document.getElementById('expTitle').value = sectionTitle;
+      const items = document.querySelectorAll('#experience .timeline-item');
+
+      if (items[0]) {
+        document.getElementById('exp1Company').value = items[0].querySelector('.timeline-company').textContent;
+        document.getElementById('exp1Role').value = items[0].querySelector('.timeline-role').textContent;
+        document.getElementById('exp1Duration').value = items[0].querySelector('.timeline-duration').textContent;
+        document.getElementById('exp1Points').value = Array.from(items[0].querySelectorAll('.timeline-points li')).map(li => li.textContent).join('\n');
+      }
+      if (items[1]) {
+        document.getElementById('exp2Company').value = items[1].querySelector('.timeline-company').textContent;
+        document.getElementById('exp2Role').value = items[1].querySelector('.timeline-role').textContent;
+        document.getElementById('exp2Duration').value = items[1].querySelector('.timeline-duration').textContent;
+        document.getElementById('exp2Points').value = Array.from(items[1].querySelectorAll('.timeline-points li')).map(li => li.textContent).join('\n');
+      }
+      if (items[2]) {
+        document.getElementById('exp3Company').value = items[2].querySelector('.timeline-company').textContent;
+        document.getElementById('exp3Role').value = items[2].querySelector('.timeline-role').textContent;
+        document.getElementById('exp3Duration').value = items[2].querySelector('.timeline-duration').textContent;
+        document.getElementById('exp3Points').value = Array.from(items[2].querySelectorAll('.timeline-points li')).map(li => li.textContent).join('\n');
+      }
+    }
+    modal.classList.toggle('open');
+  }
+
+  function saveSectionEdit(section) {
+    if (section === 'skills') {
+      const title = document.getElementById('skillsTitle').value.trim();
+      const cad = document.getElementById('cadSkills').value.split(',').map(s => s.trim()).filter(s => s);
+      const design = document.getElementById('designSkills').value.split(',').map(s => s.trim()).filter(s => s);
+      const eng = document.getElementById('engSkills').value.split(',').map(s => s.trim()).filter(s => s);
+      const ops = document.getElementById('opsSkills').value.split(',').map(s => s.trim()).filter(s => s);
+
+      document.querySelector('#skills .section-title').textContent = title;
+      const groups = document.querySelectorAll('#skills .skill-group');
+      if (groups[0]) { groups[0].querySelector('.skill-group-title').textContent = 'CAD Software'; groups[0].querySelector('.skill-tags').innerHTML = cad.map(t => `<span class="tag">${t}</span>`).join(''); }
+      if (groups[1]) { groups[1].querySelector('.skill-group-title').textContent = 'Design Skills'; groups[1].querySelector('.skill-tags').innerHTML = design.map(t => `<span class="tag">${t}</span>`).join(''); }
+      if (groups[2]) { groups[2].querySelector('.skill-group-title').textContent = 'Engineering'; groups[2].querySelector('.skill-tags').innerHTML = eng.map(t => `<span class="tag">${t}</span>`).join(''); }
+      if (groups[3]) { groups[3].querySelector('.skill-group-title').textContent = 'Operations & Tools'; groups[3].querySelector('.skill-tags').innerHTML = ops.map(t => `<span class="tag">${t}</span>`).join(''); }
+      toggleSectionEdit(section);
+      saveStateToStorage();
+      return;
+    }
+
+    if (section === 'experience') {
+      const title = document.getElementById('expTitle').value.trim();
+      if (title) document.querySelector('#experience .section-title').textContent = title;
+      const items = document.querySelectorAll('#experience .timeline-item');
+      if (items[0]) {
+        items[0].querySelector('.timeline-company').textContent = document.getElementById('exp1Company').value.trim();
+        items[0].querySelector('.timeline-role').textContent = document.getElementById('exp1Role').value.trim();
+        items[0].querySelector('.timeline-duration').textContent = document.getElementById('exp1Duration').value.trim() || 'â€“';
+        const points1 = document.getElementById('exp1Points').value.split('\n').map(p => p.trim()).filter(p => p);
+        items[0].querySelector('.timeline-points').innerHTML = points1.map(p => `<li>${p}</li>`).join('');
+      }
+      if (items[1]) {
+        items[1].querySelector('.timeline-company').textContent = document.getElementById('exp2Company').value.trim();
+        items[1].querySelector('.timeline-role').textContent = document.getElementById('exp2Role').value.trim();
+        items[1].querySelector('.timeline-duration').textContent = document.getElementById('exp2Duration').value.trim() || 'â€“';
+        const points2 = document.getElementById('exp2Points').value.split('\n').map(p => p.trim()).filter(p => p);
+        items[1].querySelector('.timeline-points').innerHTML = points2.map(p => `<li>${p}</li>`).join('');
+      }
+      if (items[2]) {
+        items[2].querySelector('.timeline-company').textContent = document.getElementById('exp3Company').value.trim();
+        items[2].querySelector('.timeline-role').textContent = document.getElementById('exp3Role').value.trim();
+        items[2].querySelector('.timeline-duration').textContent = document.getElementById('exp3Duration').value.trim() || 'â€“';
+        const points3 = document.getElementById('exp3Points').value.split('\n').map(p => p.trim()).filter(p => p);
+        items[2].querySelector('.timeline-points').innerHTML = points3.map(p => `<li>${p}</li>`).join('');
+      }
+      toggleExperienceModal();
+      saveStateToStorage();
+      return;
+    }
+  }
+
+  // â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+  // CONTACT AVAILABILITY EDIT
+  // â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+  let selectedStatus = 'Available Immediately';
+
+  function toggleAvailPanel() {
+    const panel = document.getElementById('availPanel');
+    if (panel) panel.classList.toggle('open');
+  }
+
+  function selectStatus(btn) {
+    document.querySelectorAll('.status-opt').forEach(b => b.classList.remove('selected'));
+    btn.classList.add('selected');
+    selectedStatus = btn.dataset.status;
+  }
+
+  function saveAvailability() {
+    const custom = document.getElementById('availCustom').value.trim();
+    const color  = document.getElementById('availColor').value;
+    const text   = custom || selectedStatus;
+    document.getElementById('availText').textContent = text;
+    document.getElementById('availDot').style.background = color;
+    const badge = document.getElementById('availBadge');
+
+    if (selectedStatus === 'Not Available') {
+      badge.style.cssText = 'background:rgba(239,68,68,0.1);border-color:rgba(239,68,68,0.3);color:#ef4444';
+    } else if (selectedStatus === 'Currently Employed') {
+      badge.style.cssText = 'background:rgba(249,115,22,0.1);border-color:rgba(249,115,22,0.3);color:#f97316';
+    } else {
+      badge.style.cssText = 'background:rgba(232,197,71,0.1);border-color:rgba(232,197,71,0.3);color:var(--accent)';
+    }
+    toggleAvailPanel();
+    document.getElementById('availCustom').value = '';
+    
+    // Save to localStorage
+    saveStateToStorage();
+  }
+
+  document.addEventListener('click', e => {
+    const panel = document.getElementById('availPanel');
+    const area  = document.querySelector('.availability-edit-area');
+    if (panel && panel.classList.contains('open') && area && !area.contains(e.target)) panel.classList.remove('open');
+  });
+
+  // â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+  // AUTO-INJECT URL FIELDS INTO EXISTING CARD OVERLAYS
+  // (Only for pre-existing cards that don't have URL fields yet)
+  // â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+  function injectUrlFieldsIntoCardOverlays() {
+    document.querySelectorAll('.card-edit-overlay').forEach(overlay => {
+      // Skip if URL input already exists
+      if (overlay.querySelector('.edit-img-url-input')) return;
+      
+      const descTextarea = overlay.querySelector('.edit-desc-input');
+      if (!descTextarea) return;
+      
+      // Create and insert URL label and input
+      const urlLabel = document.createElement('label');
+      urlLabel.textContent = 'Add Image via URL';
+      
+      const urlInput = document.createElement('input');
+      urlInput.type = 'url';
+      urlInput.className = 'edit-img-url-input';
+      urlInput.placeholder = 'https://raw.githubusercontent.com/...';
+      
+      descTextarea.parentNode.insertBefore(urlLabel, descTextarea.nextSibling);
+      urlLabel.parentNode.insertBefore(urlInput, urlLabel.nextSibling);
+      
+      // Add Load Image URL button to card-edit-actions if not present
+      const actions = overlay.querySelector('.card-edit-actions');
+      if (actions && !actions.querySelector('[onclick*="loadImageFromUrl"]')) {
+        const cancelBtn = actions.querySelector('[onclick*="cancelCardEdit"]');
+        const loadBtn = document.createElement('button');
+        loadBtn.className = 'btn-sm btn-sm-ghost';
+        loadBtn.style.color = 'var(--accent)';
+        loadBtn.textContent = 'Load Image URL';
+        loadBtn.onclick = function() { loadImageFromUrl(this); };
+        
+        if (cancelBtn) {
+          cancelBtn.parentNode.insertBefore(loadBtn, cancelBtn.nextSibling);
+        } else {
+          actions.appendChild(loadBtn);
+        }
+      }
+    });
+  }
+  
+  // Run on page load only - injects URL support into pre-existing cards
+  // New cards created via addNewCard() already have URL fields in their template
+  window.addEventListener('load', injectUrlFieldsIntoCardOverlays);
+
+
+</script>
+
+
+
+
+
+
+</body></html>
